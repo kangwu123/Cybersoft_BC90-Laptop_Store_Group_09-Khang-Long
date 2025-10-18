@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #000428, #004e92);
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stars animation */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) linear infinite;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #4a9eff, 0 0 40px #4a9eff;
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Comet animation */
+@keyframes cometFall {
+    from {
+        transform: translate(120%, -120%) rotate(45deg);
+    }
+
+    to {
+        transform: translate(-120%, 120%) rotate(45deg);
+    }
+}
+
+.comet {
+    position: fixed;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            #ffffff 20%,
+            #4a9eff 100%);
+    filter: drop-shadow(0 0 6px #4a9eff);
+    animation: cometFall 4s linear infinite;
+    z-index: 0;
+}
+
+.comet::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffffff;
+    right: 0;
+    top: -1px;
+    box-shadow: 0 0 20px 4px #4a9eff;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-user {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+}
+
+.btn-admin {
+    background: linear-gradient(45deg, #4a00e0, #8e2de2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    position: absolute;
+    bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
