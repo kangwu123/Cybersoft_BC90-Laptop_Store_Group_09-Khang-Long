@@ -1,0 +1,152 @@
+// Filter Section Styles
+.filter-section {
+    margin-bottom: 30px;
+
+    .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        label {
+            font-weight: 500;
+            color: #333;
+            min-width: 80px;
+        }
+        .filter-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            color: #333;
+            font-size: 0.95rem;
+            min-width: 180px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+
+            &:hover,
+            &:focus {
+                border-color: #ff324d;
+                outline: none;
+            }
+
+            option {
+                padding: 8px;
+            }
+        }
+    }
+}
+
+// Pagination Section Styles
+.pagination-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .load-more-btn {
+        padding: 12px 30px;
+        background-color: #ff324d;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(255, 50, 77, 0.2);
+
+        &:hover {
+            background-color: darken(#ff324d, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 50, 77, 0.3);
+            display: flex;
+            justify-content: center;
+            border-color: #ff324d;
+            color: #ff324d;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+            .page-btn {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 16px;
+                border: 2px solid #e5e5e5;
+                border-radius: 25px;
+                background: white;
+                color: #333;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                i {
+                    font-size: 1.1rem;
+                }
+
+                &:hover:not([disabled]) {
+                    border-color: #ff324d;
+                    color: #ff324d;
+                }
+
+                &[disabled] {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                    border-color: #e5e5e5;
+                    color: #999;
+                }
+            }
+
+            .page-info {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1.1rem;
+                color: #333;
+
+                .current-page {
+                    font-weight: 600;
+                    color: #ff324d;
+                }
+
+                .separator {
+                    color: #666;
+                }
+
+                .total-pages {
+                    color: #666;
+                }
+            }
+
+            width: 100%;
+        }
+    }
+}
+.pagination-section .pagination {
+    padding: 10px 15px;
+    gap: 12px;
+    .page-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+
+        i {
+            font-size: 1rem;
+        }
+    }
+    .page-info {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,85 @@
+// Back to Top Button Styles
+.BackToTop{
+width: 40px;
+  height: 40px;
+  line-height: 40px;
+
+  background-color: $dark;
+  box-shadow: -4px 4px 24px -10px #f55f8d;
+  border-radius: 8px;
+
+  text-align: center;
+
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+
+  font-size: $text-lg;
+  color: $light;
+  transition: all 0.2s;
+
+  opacity: 0;
+
+  &:hover {
+    background-color: $gray-600;
+    color: $light;
+    text-decoration: none;
+  } 
+}
+.cd-top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff324d;
+    color: $darkblue;
+    box-shadow: 0 6px 18px rgba(51, 51, 51, 0.12);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 180ms ease, transform 180ms ease;
+    border: none;
+    cursor: pointer;
+
+    i {
+        font-size: 1.05rem;
+        line-height: 1;
+    }
+}
+
+// Visible / hidden states (support both BEM-style modifier and legacy class)
+.cd-top.is-visible,
+.cd-top--is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.cd-top.is-hidden,
+.cd-top--fade-out {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+}
+
+// Hover and focus
+.cd-top:hover,
+.cd-top:focus {
+    background: darken(#ff324d, 6%);
+    box-shadow: 0 10px 22px rgba(51, 51, 51, 0.15);
+    outline: none;
+}
+
+// Small screens: reduce size and offset
+@media (max-width: 480px) {
+    .cd-top {
+        right: 12px;
+        bottom: 18px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
