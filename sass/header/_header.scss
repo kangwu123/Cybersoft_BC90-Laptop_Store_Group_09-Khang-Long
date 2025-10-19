@@ -1,0 +1,202 @@
+// Header styles
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, #667eea, #764ba2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    // Logo styles
+    .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 60px;
+        }
+    }
+
+    // Navigation styles
+    nav {
+        @media (min-width: 992px) {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+            &.active {
+                display: block;
+            }
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            @media (max-width: 991px) {
+                flex-direction: column;
+            }
+
+            li {
+                margin: 0 15px;
+
+                @media (max-width: 991px) {
+                    margin: 10px 0;
+                }
+
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #ff4747;
+                    }
+
+                    &.active {
+                        color: #ff4747;
+                    }
+                }
+            }
+        }
+    }
+
+    // Right section with search and cart
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .search-form {
+            position: relative;
+
+            @media (max-width: 991px) {
+                display: none;
+            }
+
+            input {
+                padding: 8px 15px;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                outline: none;
+                width: 200px;
+
+                &:focus {
+                    border-color: #ff4747;
+                }
+            }
+
+            button {
+                position: absolute;
+                right: 10px;
+                top: 55%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #666;
+
+                &:hover {
+                    color: #ff4747;
+                }
+            }
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background: #ff4747;
+                color: #fff;
+                font-size: 12px;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    // Hamburger menu
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        margin-left: 20px;
+
+        @media (max-width: 991px) {
+            display: block;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #333;
+            transition: 0.3s all ease;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 9px;
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 9px;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    bottom: 9px;
+                }
+            }
+        }
+    }
+}

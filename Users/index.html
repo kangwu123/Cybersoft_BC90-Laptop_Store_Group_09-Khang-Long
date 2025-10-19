@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../images/web-traffic.png" />
+    <title>KhangLong Laptop Store</title>
+
+    <!-- FONT AWESOME CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- FLATICON ICON CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="../libs/owl.carousel.css" />
+    <link rel="stylesheet" href="../libs/owl.carousel.min.css" />
+
+    <!-- ANIMTE CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./../css/style.css" />
+  </head>
+
+  <body class="animate__animated animate__fadeIn wow">
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="../Users/index.html">
+            <img src="../images/logo.png" alt="Shopwise" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <form class="search-form">
+            <input
+              type="text"
+              placeholder="Search..."
+              aria-label="Search products"
+            />
+            <button type="submit">
+              <i class="fi fi-rr-search"></i>
+            </button>
+          </form>
+          <div class="cart-icon">
+            <i class="fi fi-rr-shopping-cart"></i>
+            <span>0</span>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CAROUSEL -->
+
+    <!-- PRODUCT -->
+
+    <!-- FOOTER -->
+
+    <!-- BACK TO TOP -->
+    <section>
+      <a href="#" class="BackToTop cd-top text-replace js-cd-top">
+        <i class="fi fi-br-chevron-double-up"></i>
+      </a>
+    </section>
+
+    <!-- JQUERY JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- OWL CAROUSEL -->
+    <script src="../libs/owl.carousel.min.js"></script>
+    <script>
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
+        },
+      });
+    </script>
+
+    <!-- BACK TO TOP JS -->
+    <script src="../libs/backtotop/main.js"></script>
+    <script src="../libs/backtotop/util.js"></script>
+
+    <!-- WOW JS -->
+    <script src="../libs/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+    <!-- Hamburger Menu JS -->
+    <script src="../js/hamburger.js"></script>
+  </body>
+</html>
