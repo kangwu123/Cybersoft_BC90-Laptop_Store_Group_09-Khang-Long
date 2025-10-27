@@ -15,6 +15,78 @@
     <!--Admin Style  -->
     <!-- <link rel="stylesheet" href="../../assets/css/admin.css"> -->
     <link rel="stylesheet" href="../../Admin/views/styleAdmin.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        /* Reset <select> defaults */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 0;
+            outline: 0;
+            background: black;
+            color: red;
+            box-shadow: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Custom Select wrapper */
+        .select {
+            position: relative;
+            display: flex;
+            width: min(15rem, 40vw);
+            height: 2.5rem;
+            background: Black;
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .select select {
+            flex: 1;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .select::after {
+            content: "▼";
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+            transition: 0.25s all ease;
+            pointer-events: none;
+        }
+
+        .select:hover::after {
+            color: #f39c12;
+            -webkit-animation: bounce 0.5s infinite;
+            animation: bounce 0.5s infinite;
+        }
+
+        @-webkit-keyframes bounce {
+            25% {
+                transform: translatey(5px);
+            }
+
+            75% {
+                transform: translatey(-5px);
+            }
+        }
+
+        @keyframes bounce {
+            25% {
+                transform: translatey(5px);
+            }
+
+            75% {
+                transform: translatey(-5px);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -25,9 +97,8 @@
             <div class="logo-name"><span>LapTop</span>Store</div>
         </a>
         <ul class="side-menu">
-            <li><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="#"><i class='bx bx-store-alt'></i>Products</a></li>
-            <li class="active"><a href="#"><i class='bx bx-analyse'></i>Shop</a></li>
+            <li class="active"><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bx-analyse'></i>Products</a></li>
             <li><a href="#"><i class='bx bx-message-square-dots'></i>Message</a></li>
             <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
             <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
@@ -60,22 +131,25 @@
                 <i class='bx bx-bell'></i>
                 <span class="count">12</span>
             </a>
+
             <a href="#" class="profile">
-                <img src="./../../assets/images/profile.jpg" alt="profile">
+                <img src="../../assets/images/profile.jpg" alt="profile">
             </a>
         </nav>
 
         <!-- End of Navbar -->
-        <main>
+
+        <!-- Dashboard Section -->
+        <main id="dashboard-section">
             <div class="header">
                 <div class="left">
                     <h1>Dashboard</h1>
                     <ul class="breadcrumb">
                         <li><a href="#">
-                                Analytics
+                                Dashboard
                             </a></li>
                         /
-                        <li><a href="#" class="active">Shop</a></li>
+                        <li><a href="#" class="active">Home</a></li>
                     </ul>
                 </div>
                 <a href="#" class="report">
@@ -203,6 +277,104 @@
                 <!-- End of Reminders-->
             </div>
         </main>
+        <!-- End Dashboard Section -->
+
+        <!--Product Section -->
+        <main id="products-section" class="hidden">
+            <div class="header">
+                <div class="left">
+                    <h1>Products</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                List Products
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Products</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="report">
+                    <i class='bx bx-add-to-queue'></i>
+                    <span>Add Product</span>
+                </a>
+            </div>
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>All Products</h3> 
+                        <div class="select filter-brand">
+                            <select id="brandFilter" onchange="filterByBrand()">
+                                <option value="all">All Brands</option>
+                                <option value="MacbookPro">Macbook Pro</option>
+                                <option value="Asus">Asus</option>
+                                <option value="Dell">Dell</option>
+                                <option value="MSI">MSI</option>
+                            </select>
+                        </div>
+                       
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#</td>
+                                <td>MacbookPro M3 16 inch 2023</td>
+                                <td>$2499</td>
+                                <td>10</td>
+                                <td>
+                                    <img src="./../../assets/images/Macbook Pro M3 16 inch 2023.jpg" alt="product">
+                                </td>
+                                <td>
+                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
+                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#</td>
+                                <td>MacbookProM4 16 Inch 2024</td>
+                                <td>$2999</td>
+                                <td>5</td>
+                                <td>
+                                    <img src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg" alt="product">
+                                </td>
+                                <td>
+                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
+                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#</td>
+                                <td>Asus TUF Gaming F16 2025</td>
+                                <td>$1499</td>
+                                <td>15</td>
+                                <td>
+                                    <img src="./../../assets/images/Asus/asus_tuf_gaming_f16_2025.png" alt="product">
+                                </td>
+                                <td>
+                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
+                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- End Product Section -->
+
+
     </div>
 
     <!-- JAVASCRIPT -->
@@ -214,6 +386,51 @@
         crossorigin="anonymous"></script>
     <!-- Admin JS -->
     <script src="../../assets/js/Admin/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sideMenu = document.querySelectorAll('.side-menu li');
+            const sections = document.querySelectorAll('main');
+            const productsSection = document.getElementById('products-section');
+            const dashboardSection = document.getElementById('dashboard-section');
+
+            // Initially hide the products section
+            productsSection.classList.add('hidden');
+
+            sideMenu.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sideMenu.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    const target = item.querySelector('a').innerText;
+
+                    sections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+
+                    if (target === 'Dashboard') {
+                        dashboardSection.classList.remove('hidden');
+                    } else if (target === 'Products') {
+                        productsSection.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+
+        function filterByBrand() {
+            var selectedBrand = document.getElementById("brandFilter").value;
+            var tableRows = document.querySelectorAll("#products-section tbody tr");
+
+            tableRows.forEach(function(row) {
+                var productName = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+                if (selectedBrand === "all" || productName.includes(selectedBrand.toLowerCase())) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
