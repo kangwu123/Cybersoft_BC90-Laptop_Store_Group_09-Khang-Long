@@ -39,8 +39,8 @@
         .select {
             position: relative;
             display: flex;
-            width: min(15rem, 40vw);
-            height: 2.5rem;
+            width: min(20rem, 50vw);
+            height: 3rem;
             background: Black;
             border-radius: 2rem;
             overflow: hidden;
@@ -306,7 +306,7 @@
                         <div class="select filter-brand">
                             <select id="brandFilter" onchange="filterByBrand()">
                                 <option value="all">All Brands</option>
-                                <option value="MacbookPro">Macbook Pro</option>
+                                <option value="MacbookPro">Apple</option>
                                 <option value="Asus">Asus</option>
                                 <option value="Dell">Dell</option>
                                 <option value="MSI">MSI</option>
@@ -319,22 +319,23 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th>Image</th>
-                                <th>Actions</th>
+                                <th>Tên</th>
+                                <th>Hình Ảnh</th>
+                                <th>Giá Tiền</th>
+                                <th>Tình Trạng Hàng</th>
+                                <th>Chức Năng</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <td>#</td>
                                 <td>MacbookPro M3 16 inch 2023</td>
-                                <td>$2499</td>
-                                <td>10</td>
                                 <td>
                                     <img src="./../../assets/images/Macbook Pro M3 16 inch 2023.jpg" alt="product">
                                 </td>
+                                <td>$2499</td>
+                                <td>New</td>
                                 <td>
                                     <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
                                     <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
@@ -344,11 +345,11 @@
                             <tr>
                                 <td>#</td>
                                 <td>MacbookProM4 16 Inch 2024</td>
-                                <td>$2999</td>
-                                <td>5</td>
                                 <td>
                                     <img src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg" alt="product">
                                 </td>
+                                <td>$2999</td>
+                                <td>Stock</td>
                                 <td>
                                     <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
                                     <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
@@ -357,17 +358,18 @@
                             <tr>
                                 <td>#</td>
                                 <td>Asus TUF Gaming F16 2025</td>
-                                <td>$1499</td>
-                                <td>15</td>
                                 <td>
                                     <img src="./../../assets/images/Asus/asus_tuf_gaming_f16_2025.png" alt="product">
                                 </td>
+                                <td>$1499</td>
+                                <td>New</td>
                                 <td>
                                     <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
                                     <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
+
                     </table>
                 </div>
             </div>
