@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/images/web-traffic.png" />
+    <title>Admin - Khang_Long Laptop Store</title>
+    <!-- FONT AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Admin Style  -->
+    <!-- <link rel="stylesheet" href="../../assets/css/admin.css"> -->
+    <link rel="stylesheet" href="../../Admin/views/styleAdmin.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        /* Reset <select> defaults */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 0;
+            outline: 0;
+            background: black;
+            color: red;
+            box-shadow: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Custom Select wrapper */
+        .select {
+            position: relative;
+            display: flex;
+            width: min(20rem, 50vw);
+            height: 3rem;
+            background: Black;
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .select select {
+            flex: 1;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .select::after {
+            content: "▼";
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+            transition: 0.25s all ease;
+            pointer-events: none;
+        }
+
+        .select:hover::after {
+            color: #f39c12;
+            -webkit-animation: bounce 0.5s infinite;
+            animation: bounce 0.5s infinite;
+        }
+
+        @-webkit-keyframes bounce {
+            25% {
+                transform: translatey(5px);
+            }
+
+            75% {
+                transform: translatey(-5px);
+            }
+        }
+
+        @keyframes bounce {
+            25% {
+                transform: translatey(5px);
+            }
+
+            75% {
+                transform: translatey(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-laptop'></i>
+            <div class="logo-name"><span>LapTop</span>Store</div>
+        </a>
+        <ul class="side-menu">
+            <li class="active"><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bx-analyse'></i>Products</a></li>
+            <li><a href="#"><i class='bx bx-message-square-dots'></i>Message</a></li>
+            <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
+            <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" aria-label="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+
+            <a href="#" class="profile">
+                <img src="../../assets/images/profile.jpg" alt="profile">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <!-- Dashboard Section -->
+        <main id="dashboard-section">
+            <div class="header">
+                <div class="left">
+                    <h1>Dashboard</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Dashboard
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Home</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="report">
+                    <i class='bx bx-cloud-download'></i>
+                    <span>Download CSV</span>
+                </a>
+            </div>
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bx-calendar-check'></i>
+                    <span class="info">
+                        <h3>
+                            1,074
+                        </h3>
+                        <p>Paid Order</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-show-alt'></i>
+                    <span class="info">
+                        <h3>
+                            3,944
+                        </h3>
+                        <p>Site Visit</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-line-chart'></i>
+                    <span class="info">
+                        <h3>
+                            14,721
+                        </h3>
+                        <p>Searches</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>
+                            $6,742
+                        </h3>
+                        <p>Total Sales</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Recent Orders</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="./../../assets/images/profile.jpg" alt="profile">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./../../assets/images/profile.jpg" alt="profile">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="./../../assets/images/profile.jpg" alt="profile">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status process">Processing</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Reminders -->
+                <div class="reminders">
+                    <div class="header">
+                        <i class='bx bx-note'></i>
+                        <h3>Remiders</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-plus'></i>
+                    </div>
+                    <ul class="task-list">
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Start Our Meeting</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Analyse Our Site</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Play Footbal</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- End of Reminders-->
+            </div>
+        </main>
+        <!-- End Dashboard Section -->
+
+        <!--Product Section -->
+        <main id="products-section" class="hidden">
+            <div class="header">
+                <div class="left">
+                    <h1>Products</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                List Products
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Products</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="report">
+                    <i class='bx bx-add-to-queue'></i>
+                    <span>Add Product</span>
+                </a>
+            </div>
+
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>All Products</h3> 
+                        <div class="select filter-brand">
+                            <select id="brandFilter" onchange="filterByBrand()">
+                                <option value="all">All Brands</option>
+                                <option value="MacbookPro">Apple</option>
+                                <option value="Asus">Asus</option>
+                                <option value="Dell">Dell</option>
+                                <option value="MSI">MSI</option>
+                            </select>
+                        </div>
+                       
+                        <i class='bx bx-search'></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Tên</th>
+                                <th>Hình Ảnh</th>
+                                <th>Giá Tiền</th>
+                                <th>Tình Trạng Hàng</th>
+                                <th>Chức Năng</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>#</td>
+                                <td>MacbookPro M3 16 inch 2023</td>
+                                <td>
+                                    <img src="./../../assets/images/Macbook Pro M3 16 inch 2023.jpg" alt="product">
+                                </td>
+                                <td>$2499</td>
+                                <td>New</td>
+                                <td>
+                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
+                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#</td>
+                                <td>MacbookProM4 16 Inch 2024</td>
+                                <td>
+                                    <img src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg" alt="product">
+                                </td>
+                                <td>$2999</td>
+                                <td>Stock</td>
+                                <td>
+                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
+                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#</td>
+                                <td>Asus TUF Gaming F16 2025</td>
+                                <td>
+                                    <img src="./../../assets/images/Asus/asus_tuf_gaming_f16_2025.png" alt="product">
+                                </td>
+                                <td>$1499</td>
+                                <td>New</td>
+                                <td>
+                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
+                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- End Product Section -->
+
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- Admin JS -->
+    <script src="../../assets/js/Admin/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sideMenu = document.querySelectorAll('.side-menu li');
+            const sections = document.querySelectorAll('main');
+            const productsSection = document.getElementById('products-section');
+            const dashboardSection = document.getElementById('dashboard-section');
+
+            // Initially hide the products section
+            productsSection.classList.add('hidden');
+
+            sideMenu.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sideMenu.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    const target = item.querySelector('a').innerText;
+
+                    sections.forEach(section => {
+                        section.classList.add('hidden');
+                    });
+
+                    if (target === 'Dashboard') {
+                        dashboardSection.classList.remove('hidden');
+                    } else if (target === 'Products') {
+                        productsSection.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+
+        function filterByBrand() {
+            var selectedBrand = document.getElementById("brandFilter").value;
+            var tableRows = document.querySelectorAll("#products-section tbody tr");
+
+            tableRows.forEach(function(row) {
+                var productName = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+                if (selectedBrand === "all" || productName.includes(selectedBrand.toLowerCase())) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
