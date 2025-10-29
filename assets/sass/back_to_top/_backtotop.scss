@@ -1,12 +1,11 @@
-// Back to Top Button Styles
-.BackToTop{
-width: 40px;
+/* BACK TO TOP */
+.BackToTop {
+  width: 40px;
   height: 40px;
   line-height: 40px;
-
-  background-color: $dark;
+  background-color: $primary-Darkblue;
   box-shadow: -4px 4px 24px -10px #f55f8d;
-  border-radius: 8px;
+  border-radius: 20px;
 
   text-align: center;
 
@@ -15,71 +14,94 @@ width: 40px;
   bottom: 80px;
 
   font-size: $text-lg;
-  color: $light;
+  color: $secondary;
   transition: all 0.2s;
 
   opacity: 0;
 
   &:hover {
-    background-color: $gray-600;
-    color: $light;
+    background-color: $primary-Green;
+    color: $primary-crimson;
     text-decoration: none;
-  } 
-}
-.cd-top {
-    position: fixed;
-    right: 20px;
-    bottom: 24px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ff324d;
-    color: $darkblue;
-    box-shadow: 0 6px 18px rgba(51, 51, 51, 0.12);
-    z-index: 9999;
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
-    transition: opacity 180ms ease, transform 180ms ease;
-    border: none;
-    cursor: pointer;
-
-    i {
-        font-size: 1.05rem;
-        line-height: 1;
-    }
+  }
 }
 
-// Visible / hidden states (support both BEM-style modifier and legacy class)
-.cd-top.is-visible,
 .cd-top--is-visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  visibility: visible;
+  opacity: 0.8;
 }
 
-.cd-top.is-hidden,
-.cd-top--fade-out {
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
+.PhoneTop {
+  width: 270px;
+  height: 40px;
+  line-height: 40px;
+  box-shadow: -4px 4px 24px -10px #f55f8d;
+  border-radius: 8px;
+
+  text-align: center;
+
+  position: fixed;
+  right: 60px;
+  bottom: 15px;
+
+  font-size: $text-lg;
+  background-color: red;
+  color: $secondary;
+
+  &:hover {
+    background-color: $primary-Darkblue;
+    color: $secondary;
+    text-decoration: none;
+  }
 }
 
-// Hover and focus
-.cd-top:hover,
-.cd-top:focus {
-    background: darken(#ff324d, 6%);
-    box-shadow: 0 10px 22px rgba(51, 51, 51, 0.15);
-    outline: none;
+.PhoneTop-icon {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  box-shadow: -4px 4px 24px -10px #f55f8d;
+  border: 1px solid red;
+  border-radius: 50%;
+
+  text-align: center;
+
+  position: fixed;
+  right: 15px;
+  bottom: 5px;
+
+  font-size: $text-2xl;
+  background-color: $secondary;
+  color: red;
+  animation: SlightlyRotate 0.3s infinite;
+
+  &:hover {
+    background-color: $secondary;
+    text-decoration: none;
+  }
 }
 
-// Small screens: reduce size and offset
-@media (max-width: 480px) {
-    .cd-top {
-        right: 12px;
-        bottom: 18px;
-        width: 42px;
-        height: 42px;
-    }
-}
+@media (max-width: 1024px) {
+  .BackToTop,
+  .PhoneTop,
+  .PhoneTop-icon {
+    font-size: $text-base;
+  }
 
+  .BackToTop {
+    bottom: 60px;
+  }
+
+  .PhoneTop {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+
+    right: 55px;
+  }
+
+  .PhoneTop-icon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}

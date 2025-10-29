@@ -1,450 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./assets/images/web-traffic.png" />
-    <title>KhangLong Laptop Store</title>
 
-    <!-- FONT AWESOME CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./../..//assets/images/web-traffic.png" />
+  <title>KhangLong Laptop Store</title>
 
-    <!-- FLATICON ICON CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
-    />
+  <!-- FONT AWESOME CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- OWL CAROUSEL -->
-    <link rel="stylesheet" href="./../../assets/libs/owl.carousel.css" />
-    <link rel="stylesheet" href="./../../assets/libs/owl.carousel.min.css" />
+  <!-- FLATICON ICON CSS -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css" />
 
-    <!-- ANIMTE CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+  <!-- OWL CAROUSEL -->
+  <link rel="stylesheet" href="./../../assets/libs/css/owl.carousel.css" />
+  <link rel="stylesheet" href="./../../assets/libs/css/owl.carousel.min.css" />
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./../../assets/css/style.css" />
-  </head>
+  <!-- ANIMTE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- TAILWIND CSS & FLOWBITE -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet">
 
-  <body class="animate__animated animate__fadeIn wow">
-    <!-- HEADER -->
-    <header>
-      <div class="container">
-        <div class="logo">
-          <a href="./Client/views/index.html">
-            <img src="./../../assets/images/logo.png" alt="Shopwise" />
-          </a>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#" class="active">HOME</a></li>
-            <li><a href="#">SHOP</a></li>
-            <li><a href="#">PRODUCTS</a></li>
-            <li><a href="#">BLOG</a></li>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">CONTACT</a></li>
-          </ul>
-        </nav>
-        <div class="header-right">
-          <form class="search-form">
-            <input
-              type="text"
-              placeholder="Search..."
-              aria-label="Search products"
-            />
-            <button type="submit">
-              <i class="fi fi-rr-search"></i>
-            </button>
-          </form>
-          <div class="cart-icon">
-            <i class="fi fi-rr-shopping-cart"></i>
-            <span>0</span>
-          </div>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="./../../assets/css/style.css" />
+</head>
+
+<body class="animate__animated animate__fadeIn wow">
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="./Client/views/index.html">
+          <img src="./../../assets/images/logo.png" alt="logo" />
+        </a>
       </div>
-    </header>
-
-    <!-- CAROUSEL -->
-    <section class="carousel-section">
-      <div class="owl-carousel owl-theme">
-        <div class="item">
-          <img
-            src="./../../assets/images/Carousel/avertisementBanner.jpg"
-            alt="Carousel Image 1"
-          />
-        </div>
-        <div class="item">
-          <img
-            src="./../../assets/images/Carousel/MSI Gamming Carousel.jpg"
-            alt="Carousel Image 2"
-          />
-        </div>
-        <div class="item">
-          <img
-            src="./../../assets/images/Carousel/LaptopBanner.png"
-            alt="Carousel Image 3"
-          />
-        </div>
-        <div class="item">
-          <img
-            src="./../../assets/images/Carousel/macbook-pro-14-inch-m4-16gb-512gb.jpg"
-            alt="Carousel Image 4"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Flash Sale -->
-    <section class="container img-animate">
-      <img src="./../../assets/images/Carousel/OnSale.png" width="100%" alt="OnSale" />
-    </section>
-
-    <!-- Laptop Products Section -->
-    <section class="laptop-products">
-      <div class="container">
-        <h2 class="section-title">BEST SELLING LAPTOP</h2>
-        <p class="section-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          blandit massa enim Nullam nunc varius.
-        </p>
-
-        <!-- Find Product & Filter Product-->
-        <div class="filter-section">
-          <div class="filter-container">
-            <div class="filter-group">
-              <label for="brand-filter">Brand:</label>
-              <select id="brand-filter" class="filter-dropdown">
-                <option value="">All Brands</option>
-                <option value="asus">Asus</option>
-                <option value="dell">Dell</option>
-                <option value="msi">MSI</option>
-                <option value="apple">Apple</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="price-filter">Price Range:</label>
-              <select id="price-filter" class="filter-dropdown">
-                <option value="">All Prices</option>
-                <option value="0-1000">Under $1000</option>
-                <option value="1000-1500">$1000 - $1500</option>
-                <option value="1500-2000">$1500 - $2000</option>
-                <option value="2000+">Over $2000</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="sort-filter">Sort By:</label>
-              <select id="sort-filter" class="filter-dropdown">
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="newest">Newest First</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- List Product -->
-        <div class="products-grid">
-          <!-- Product Item -->
-          <div class="product-item">
-            <div class="product-image">
-              <img
-                src="./../../assets/images/Dell/Dell Gaming G15 5515 R75800H.png"
-                alt="Dell Laptop"
-              />
-              <div class="product-actions">
-                <button class="action-btn zoom">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-                <button class="action-btn wishlist">
-                  <i class="fi fi-rr-heart"></i>
-                </button>
-                <button class="action-btn compare">
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Dell Gaming 15</h3>
-              <div class="product-price">
-                <span class="price">$1,299.00</span>
-                <span class="original-price">$1,499.00</span>
-              </div>
-              <div class="product-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="reviews">(21)</span>
-              </div>
-              <button class="add-to-cart-btn">Add To Cart</button>
-            </div>
-          </div>
-
-          <!-- More Product Items -->
-          <div class="product-item">
-            <div class="product-image">
-              <img
-                src="./../../assets/images/MSI Gamming/LaptopMSI Vector16 HX AI.png"
-                alt="MSI Gaming Laptop"
-              />
-              <div class="product-actions">
-                <button class="action-btn zoom">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-                <button class="action-btn wishlist">
-                  <i class="fi fi-rr-heart"></i>
-                </button>
-                <button class="action-btn compare">
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">MSI Vector 16</h3>
-              <div class="product-price">
-                <span class="price">$1,899.00</span>
-                <span class="original-price">$2,099.00</span>
-              </div>
-              <div class="product-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="reviews">(15)</span>
-              </div>
-              <button class="add-to-cart-btn">Add To Cart</button>
-            </div>
-          </div>
-
-          <div class="product-item">
-            <div class="product-image">
-              <img
-                src="./../../assets/images/Asus/laptop-asus-rog-zephyrus-g16-gu605cx.png"
-                alt="Asus Laptop"
-              />
-              <div class="product-actions">
-                <button class="action-btn zoom">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-                <button class="action-btn wishlist">
-                  <i class="fi fi-rr-heart"></i>
-                </button>
-                <button class="action-btn compare">
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Asus ROG Zephyrus G16</h3>
-              <div class="product-price">
-                <span class="price">$1,599.00</span>
-                <span class="original-price">$1,799.00</span>
-              </div>
-              <div class="product-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="reviews">(25)</span>
-              </div>
-              <button class="add-to-cart-btn">Add To Cart</button>
-            </div>
-          </div>
-
-          <div class="product-item">
-            <div class="product-image">
-              <img
-                src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg"
-                alt="MacbookProM4"
-              />
-              <div class="product-actions">
-                <button class="action-btn zoom">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-                <button class="action-btn wishlist">
-                  <i class="fi fi-rr-heart"></i>
-                </button>
-                <button class="action-btn compare">
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Macbook Pro M4</h3>
-              <div class="product-price">
-                <span class="price">$999.00</span>
-                <span class="original-price">$1,199.00</span>
-              </div>
-              <div class="product-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="reviews">(18)</span>
-              </div>
-              <button class="add-to-cart-btn">Add To Cart</button>
-            </div>
-          </div>
-
-          <div class="product-item">
-            <div class="product-image">
-              <img
-                src="./../../assets/images/Asus/asus_tuf_gaming_fa506ncg.png"
-                alt="AsusTUFGamingFA506NCG"
-              />
-              <div class="product-actions">
-                <button class="action-btn zoom">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-                <button class="action-btn wishlist">
-                  <i class="fi fi-rr-heart"></i>
-                </button>
-                <button class="action-btn compare">
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Asus TUF Gaming FA506NCG</h3>
-              <div class="product-price">
-                <span class="price">$999.00</span>
-                <span class="original-price">$1,199.00</span>
-              </div>
-              <div class="product-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="reviews">(18)</span>
-              </div>
-              <button class="add-to-cart-btn">Add To Cart</button>
-            </div>
-          </div>
-
-          <div class="product-item">
-            <div class="product-image">
-              <img
-                src="./../../assets/images/Asus/Laptop Asus ROG Strix G16 G615LR-S5289W.png"
-                alt="Asus ROG Strix G16 G615LR-S5289W"
-              />
-              <div class="product-actions">
-                <button class="action-btn zoom">
-                  <i class="fi fi-rr-search"></i>
-                </button>
-                <button class="action-btn wishlist">
-                  <i class="fi fi-rr-heart"></i>
-                </button>
-                <button class="action-btn compare">
-                  <i class="fa-solid fa-arrows-rotate"></i>
-                </button>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Asus ROG Strix G16 G615LR-S5289W</h3>
-              <div class="product-price">
-                <span class="price">$999.00</span>
-                <span class="original-price">$1,199.00</span>
-              </div>
-              <div class="product-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="reviews">(18)</span>
-              </div>
-              <button class="add-to-cart-btn">Add To Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination-section">
-          <button id="load-more" class="load-more-btn">
-            Load More Products
+      <nav>
+        <ul>
+          <li><a href="#" class="active">HOME</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">PRODUCTS</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <form class="search-form">
+          <input type="text" placeholder="Search..." aria-label="Search products" />
+          <button type="submit">
+            <i class="fi fi-rr-search"></i>
           </button>
-          <div class="pagination">
-            <button class="page-btn" data-page="last"><<</button>
-            <button class="page-btn" data-page="1">1</button>
-            <button class="page-btn" data-page="2">2</button>
-            <button class="page-btn" data-page="3">3</button>
-            <span class="page-dots">...</span>
-            <button class="page-btn" data-page="next">>></button>
+        </form>
+        <div class="cart-icon">
+          <i class="fi fi-rr-shopping-cart"></i>
+          <span>0</span>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- CAROUSEL -->
+  <section class="carousel-section">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <img src="./../../assets/images/Carousel/avertisementBanner.jpg" alt="Carousel Image 1" />
+      </div>
+      <div class="item">
+        <img src="./../../assets/images/Carousel/MSI Gamming Carousel.jpg" alt="Carousel Image 2" />
+      </div>
+      <div class="item">
+        <img src="./../../assets/images/Carousel/LaptopBanner.png" alt="Carousel Image 3" />
+      </div>
+      <div class="item">
+        <img src="./../../assets/images/Carousel/macbook-pro-14-inch-m4-16gb-512gb.jpg" alt="Carousel Image 4" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Flash Sale -->
+  <section class="container img-animate">
+    <img src="./../../assets/images/Carousel/OnSale.png" width="100%" alt="OnSale" />
+  </section>
+
+  <!-- Laptop Products Section -->
+  <section class="laptop-products">
+    <div class="container">
+      <h2 class="section-title">BEST SELLING LAPTOP</h2>
+      <p class="section-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        blandit massa enim Nullam nunc varius.
+      </p>
+
+      <!-- Find Product & Filter Product-->
+      <div class="filter-section">
+        <div class="filter-container">
+          <div class="filter-group">
+            <label for="brand-filter">Brand:</label>
+            <select id="brand-filter" class="filter-dropdown">
+              <option value="">All Brands</option>
+              <option value="asus">Asus</option>
+              <option value="dell">Dell</option>
+              <option value="msi">MSI</option>
+              <option value="apple">Apple</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="price-filter">Price Range:</label>
+            <select id="price-filter" class="filter-dropdown">
+              <option value="">All Prices</option>
+              <option value="0-1000">Under $1000</option>
+              <option value="1000-1500">$1000 - $1500</option>
+              <option value="1500-2000">$1500 - $2000</option>
+              <option value="2000+">Over $2000</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sort-filter">Sort By:</label>
+            <select id="sort-filter" class="filter-dropdown">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest First</option>
+            </select>
           </div>
         </div>
       </div>
-      <!-- Flash Sale -->
-      <section
-        class="container wow animate__animated animate__jackInTheBox"
-        data-wow-duration="5s"
-        all
-        ease-in-out="4s"
-      >
-        <img
-          src="./../../assets/images/Carousel/FlashSale.png"
-          width="100%"
-          alt="FlashSale"
-        />
-      </section>
+
+      <!-- List Product -->
+      <div class="products-grid">
+        <!-- Product Item -->
+        <div class="product-item">
+          <div class="product-image">
+            <img src="./../../assets/images/Dell/Dell Gaming G15 5515 R75800H.png" alt="Dell Laptop" />
+            <div class="product-actions">
+              <button class="action-btn zoom">
+                <i class="fi fi-rr-search"></i>
+              </button>
+              <button class="action-btn wishlist">
+                <i class="fi fi-rr-heart"></i>
+              </button>
+              <button class="action-btn compare">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Dell Gaming 15</h3>
+            <div class="product-price">
+              <span class="price">$1,299.00</span>
+              <span class="original-price">$1,499.00</span>
+            </div>
+            <div class="product-rating">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+              <span class="reviews">(21)</span>
+            </div>
+            <button class="add-to-cart-btn">Add To Cart</button>
+          </div>
+        </div>
+
+        <!-- More Product Items -->
+        <div class="product-item">
+          <div class="product-image">
+            <img src="./../../assets/images/MSI Gamming/LaptopMSI Vector16 HX AI.png" alt="MSI Gaming Laptop" />
+            <div class="product-actions">
+              <button class="action-btn zoom">
+                <i class="fi fi-rr-search"></i>
+              </button>
+              <button class="action-btn wishlist">
+                <i class="fi fi-rr-heart"></i>
+              </button>
+              <button class="action-btn compare">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">MSI Vector 16</h3>
+            <div class="product-price">
+              <span class="price">$1,899.00</span>
+              <span class="original-price">$2,099.00</span>
+            </div>
+            <div class="product-rating">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+              <span class="reviews">(15)</span>
+            </div>
+            <button class="add-to-cart-btn">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-image">
+            <img src="./../../assets/images/Asus/laptop-asus-rog-zephyrus-g16-gu605cx.png" alt="Asus Laptop" />
+            <div class="product-actions">
+              <button class="action-btn zoom">
+                <i class="fi fi-rr-search"></i>
+              </button>
+              <button class="action-btn wishlist">
+                <i class="fi fi-rr-heart"></i>
+              </button>
+              <button class="action-btn compare">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Asus ROG Zephyrus G16</h3>
+            <div class="product-price">
+              <span class="price">$1,599.00</span>
+              <span class="original-price">$1,799.00</span>
+            </div>
+            <div class="product-rating">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+              <span class="reviews">(25)</span>
+            </div>
+            <button class="add-to-cart-btn">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-image">
+            <img src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg" alt="MacbookProM4" />
+            <div class="product-actions">
+              <button class="action-btn zoom">
+                <i class="fi fi-rr-search"></i>
+              </button>
+              <button class="action-btn wishlist">
+                <i class="fi fi-rr-heart"></i>
+              </button>
+              <button class="action-btn compare">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Macbook Pro M4</h3>
+            <div class="product-price">
+              <span class="price">$999.00</span>
+              <span class="original-price">$1,199.00</span>
+            </div>
+            <div class="product-rating">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+              <span class="reviews">(18)</span>
+            </div>
+            <button class="add-to-cart-btn">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-image">
+            <img src="./../../assets/images/Asus/asus_tuf_gaming_fa506ncg.png" alt="AsusTUFGamingFA506NCG" />
+            <div class="product-actions">
+              <button class="action-btn zoom">
+                <i class="fi fi-rr-search"></i>
+              </button>
+              <button class="action-btn wishlist">
+                <i class="fi fi-rr-heart"></i>
+              </button>
+              <button class="action-btn compare">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Asus TUF Gaming FA506NCG</h3>
+            <div class="product-price">
+              <span class="price">$999.00</span>
+              <span class="original-price">$1,199.00</span>
+            </div>
+            <div class="product-rating">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+              <span class="reviews">(18)</span>
+            </div>
+            <button class="add-to-cart-btn">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-image">
+            <img src="./../../assets/images/Asus/Laptop Asus ROG Strix G16 G615LR-S5289W.png"
+              alt="Asus ROG Strix G16 G615LR-S5289W" />
+            <div class="product-actions">
+              <button class="action-btn zoom">
+                <i class="fi fi-rr-search"></i>
+              </button>
+              <button class="action-btn wishlist">
+                <i class="fi fi-rr-heart"></i>
+              </button>
+              <button class="action-btn compare">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Asus ROG Strix G16 G615LR-S5289W</h3>
+            <div class="product-price">
+              <span class="price">$999.00</span>
+              <span class="original-price">$1,199.00</span>
+            </div>
+            <div class="product-rating">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+              <span class="reviews">(18)</span>
+            </div>
+            <button class="add-to-cart-btn">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-section">
+        <button id="load-more" class="load-more-btn">
+          Load More Products
+        </button>
+        <div class="pagination">
+          <button class="page-btn" data-page="last">
+            <<< /button>
+              <button class="page-btn" data-page="1">1</button>
+              <button class="page-btn" data-page="2">2</button>
+              <button class="page-btn" data-page="3">3</button>
+              <span class="page-dots">...</span>
+              <button class="page-btn" data-page="next">>></button>
+        </div>
+      </div>
+    </div>
+    <!-- Flash Sale -->
+    <section class="container wow animate__animated animate__jackInTheBox" data-wow-duration="5s" all ease-in-out="4s">
+      <img src="./../../assets/images/Carousel/FlashSale.png" width="100%" alt="FlashSale" />
     </section>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-section about">
+        <h3>Khang_Long Laptop Store</h3>
+        <p>Chuyên cung cấp Laptop chính hãng & Xách Tay, giá tốt nhất thị trường.
+          Cam kết uy tín - chất lượng - tận tâm phục vụ.</p>
+        <p><b>Hotline:</b> <a href="tel:+84768957156" style="color: red; text-decoration: none;">(+84)
+            768
+            957
+            156</a></p>
+        <p><b>Email:</b> 
+          <a href="mailto:khanggiavu250296@gmail.com" style="color: red; text-decoration: none;">khanggiavu250296@gmail.com</a>
+        </p>
+      </div>
 
-    <!-- FOOTER -->
+      <div class="footer-section links">
+        <h4>Liên kết nhanh</h4>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li><a href="#">Khuyến mãi</a></li>
+          <li><a href="#">Chính sách bảo hành</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
 
-    <!-- BACK TO TOP -->
-    <section>
-      <a href="#" class="BackToTop cd-top text-replace js-cd-top">
-        <i class="fi fi-br-chevron-double-up"></i>
-      </a>
-    </section>
+      <div class="footer-section policy">
+        <h4>Chính sách & Hỗ trợ</h4>
+        <ul>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Hướng dẫn mua hàng</a></li>
+          <li><a href="#">Thanh toán & giao hàng</a></li>
+        </ul>
+      </div>
 
-    <!-- JQUERY JS -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+      <div class="footer-section social">
+        <h4>Kết nối với chúng tôi</h4>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="YouTube"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
 
-    <!-- OWL CAROUSEL -->
-    <script src="./../../assets/libs/owl.carousel.min.js"></script>
-    <script>
-      $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 1,
-          },
-          1000: {
-            items: 1,
-          },
-        },
-      });
-    </script>
+    <div class="footer-bottom">
+      <p>© 2025 KhangLong Laptop Store. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- BACK TO TOP JS -->
-    <script src="./../../assets/js/backtotop.js"></script>
+  <!-- BACK TO TOP -->
+  <section>
+    <a href="#" class="BackToTop cd-top text-replace js-cd-top">
+      <i class="fi fi-br-chevron-double-up"></i>
+    </a>
+  </section>
 
-    <!-- WOW JS -->
-    <script src="./../../assets/libs/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
+  <!-- JQUERY JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Hamburger Menu JS -->
-    <script src="./../../assets/js/hamburger.js"></script>
-    <!-- Pagination JS -->
-    <script src="./../../assets/js/pagination.js"></script>
-  </body>
+  <!-- OWL CAROUSEL -->
+  <script src="./../../assets/libs/owl.carousel.min.js"></script>
+
+  <!-- BACK TO TOP JS -->
+  <script src="./../../assets/js/backtotop.js"></script>
+
+  <!-- WOW JS -->
+  <script src="./../../assets/libs/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!-- FLOWBITE JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <!--Main JS  -->
+  <script src="./../../assets/js/main.js"></script>
+</body>
+
 </html>
