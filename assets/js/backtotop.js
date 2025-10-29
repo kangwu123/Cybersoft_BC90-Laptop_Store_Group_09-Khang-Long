@@ -1,74 +1,210 @@
-(() => {
-  // Back to Top enhanced visibility logic
-  const backTop = document.querySelector(".js-cd-top");
-  const scrollThreshold = 300; // Show button after scrolling this many pixels
-  let isScrolling = false;
+(function(){
+    // Back to Top - by CodyHouse.co
+	var backTop = document.getElementsByClassName('js-cd-top')[0],
+		offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
+		offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		scrollDuration = 700,
+		scrolling = false;
 
-  if (!backTop) return;
+	if( backTop ) {
+		//update back to top visibility on scrolling
+		window.addEventListener("scroll", function(event) {
+			if( !scrolling ) {
+				scrolling = true;
+				(!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
+			}
+		});
 
-  const checkScrollPosition = () => {
-    if (!isScrolling) {
-      isScrolling = true;
-      requestAnimationFrame(() => {
-        const scrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
-        const windowHeight = window.innerHeight;
-        const documentHeight = Math.max(
-          document.body.scrollHeight,
-          document.body.offsetHeight,
-          document.documentElement.clientHeight,
-          document.documentElement.scrollHeight,
-          document.documentElement.offsetHeight
-        );
+		//smooth scroll to top
+		backTop.addEventListener('click', function(event) {
+			event.preventDefault();
+			(!window.requestAnimationFrame) ? window.scrollTo(0, 0) : Util.scrollTo(0, scrollDuration);
+		});
+	}
 
-        // Show the button when scrolled down AND not at the bottom
-        const isNotAtBottom =
-          documentHeight - (scrollPosition + windowHeight) > 50;
+	function checkBackToTop() {
+		var windowTop = window.scrollY || document.documentElement.scrollTop;
+		( windowTop > offset ) ? Util.addClass(backTop, 'cd-top--is-visible') : Util.removeClass(backTop, 'cd-top--is-visible cd-top--fade-out');
+		( windowTop > offsetOpacity ) && Util.addClass(backTop, 'cd-top--fade-out');
+		scrolling = false;
+	}
+})();
 
-        if (scrollPosition > scrollThreshold && isNotAtBottom) {
-          backTop.classList.add("cd-top--is-visible");
-          backTop.classList.remove("cd-top--fade-out");
-        } else {
-          backTop.classList.remove("cd-top--is-visible");
-          backTop.classList.add("cd-top--fade-out");
-        }
+/**
+ *  Util
+ */
 
-        isScrolling = false;
-      });
+// Utility function
+function Util () {};
+
+/* 
+	class manipulation functions
+*/
+Util.hasClass = function(el, className) {
+	if (el.classList) return el.classList.contains(className);
+	else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+};
+
+Util.addClass = function(el, className) {
+	var classList = className.split(' ');
+ 	if (el.classList) el.classList.add(classList[0]);
+ 	else if (!Util.hasClass(el, classList[0])) el.className += " " + classList[0];
+ 	if (classList.length > 1) Util.addClass(el, classList.slice(1).join(' '));
+};
+
+Util.removeClass = function(el, className) {
+	var classList = className.split(' ');
+	if (el.classList) el.classList.remove(classList[0]);	
+	else if(Util.hasClass(el, classList[0])) {
+		var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
+		el.className=el.className.replace(reg, ' ');
+	}
+	if (classList.length > 1) Util.removeClass(el, classList.slice(1).join(' '));
+};
+
+Util.toggleClass = function(el, className, bool) {
+	if(bool) Util.addClass(el, className);
+	else Util.removeClass(el, className);
+};
+
+Util.setAttributes = function(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+};
+
+/* 
+  DOM manipulation
+*/
+Util.getChildrenByClassName = function(el, className) {
+  var children = el.children,
+    childrenByClass = [];
+  for (var i = 0; i < el.children.length; i++) {
+    if (Util.hasClass(el.children[i], className)) childrenByClass.push(el.children[i]);
+  }
+  return childrenByClass;
+};
+
+/* 
+	Animate height of an element
+*/
+Util.setHeight = function(start, to, element, duration, cb) {
+	var change = to - start,
+	    currentTime = null;
+
+  var animateHeight = function(timestamp){  
+    if (!currentTime) currentTime = timestamp;         
+    var progress = timestamp - currentTime;
+    var val = parseInt((progress/duration)*change + start);
+    element.setAttribute("style", "height:"+val+"px;");
+    if(progress < duration) {
+        window.requestAnimationFrame(animateHeight);
+    } else {
+    	cb();
+    }
+  };
+  
+  //set the height of the element before starting animation -> fix bug on Safari
+  element.setAttribute("style", "height:"+start+"px;");
+  window.requestAnimationFrame(animateHeight);
+};
+
+/* 
+	Smooth Scroll
+*/
+
+Util.scrollTo = function(final, duration, cb) {
+  var start = window.scrollY || document.documentElement.scrollTop,
+      currentTime = null;
+      
+  var animateScroll = function(timestamp){
+  	if (!currentTime) currentTime = timestamp;        
+    var progress = timestamp - currentTime;
+    if(progress > duration) progress = duration;
+    var val = Math.easeInOutQuad(progress, start, final-start, duration);
+    window.scrollTo(0, val);
+    if(progress < duration) {
+        window.requestAnimationFrame(animateScroll);
+    } else {
+      cb && cb();
     }
   };
 
-  // Smooth scroll to top
-  const scrollToTop = (duration = 700) => {
-    const start = window.scrollY || document.documentElement.scrollTop;
-    const startTime = performance.now();
+  window.requestAnimationFrame(animateScroll);
+};
 
-    const animateScroll = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
+/* 
+  Focus utility classes
+*/
 
-      // Easing function for smooth deceleration
-      const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+//Move focus to an element
+Util.moveFocus = function (element) {
+  if( !element ) element = document.getElementsByTagName("body")[0];
+  element.focus();
+  if (document.activeElement !== element) {
+    element.setAttribute('tabindex','-1');
+    element.focus();
+  }
+};
 
-      window.scrollTo(0, start * (1 - easeOut(progress)));
+/* 
+  Misc
+*/
 
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      }
-    };
+Util.getIndexInArray = function(array, el) {
+  return Array.prototype.indexOf.call(array, el);
+};
 
-    requestAnimationFrame(animateScroll);
-  };
+Util.cssSupports = function(property, value) {
+  if('CSS' in window) {
+    return CSS.supports(property, value);
+  } else {
+    var jsProperty = property.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase();});
+    return jsProperty in document.body.style;
+  }
+};
 
-  // Event Listeners
-  window.addEventListener("scroll", checkScrollPosition, { passive: true });
-  window.addEventListener("resize", checkScrollPosition, { passive: true });
+/* 
+	Polyfills
+*/
+//Closest() method
+if (!Element.prototype.matches) {
+	Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
 
-  backTop.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToTop();
-  });
+if (!Element.prototype.closest) {
+	Element.prototype.closest = function(s) {
+		var el = this;
+		if (!document.documentElement.contains(el)) return null;
+		do {
+			if (el.matches(s)) return el;
+			el = el.parentElement || el.parentNode;
+		} while (el !== null && el.nodeType === 1); 
+		return null;
+	};
+}
 
-  // Initial check
-  checkScrollPosition();
-})();
+//Custom Event() constructor
+if ( typeof window.CustomEvent !== "function" ) {
+
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+}
+
+/* 
+	Animation curves
+*/
+Math.easeInOutQuad = function (t, b, c, d) {
+	t /= d/2;
+	if (t < 1) return c/2*t*t + b;
+	t--;
+	return -c/2 * (t*(t-2) - 1) + b;
+};
