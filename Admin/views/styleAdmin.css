@@ -621,3 +621,74 @@ body{
     }
 
 }
+
+ .hidden {
+            display: none;
+        }
+        /* Reset <select> defaults */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 0;
+            outline: 0;
+            background: black;
+            color: red;
+            box-shadow: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Custom Select wrapper */
+        .select {
+            position: relative;
+            display: flex;
+            width: min(20rem, 50vw);
+            height: 3rem;
+            background: Black;
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .select select {
+            flex: 1;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .select::after {
+            content: "▼";
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+            transition: 0.25s all ease;
+            pointer-events: none;
+        }
+
+        .select:hover::after {
+            color: #f39c12;
+            -webkit-animation: bounce 0.5s infinite;
+            animation: bounce 0.5s infinite;
+        }
+
+        @-webkit-keyframes bounce {
+            25% {
+                transform: translatey(5px);
+            }
+
+            75% {
+                transform: translatey(-5px);
+            }
+        }
+
+        @keyframes bounce {
+            25% {
+                transform: translatey(5px);
+            }
+
+            75% {
+                transform: translatey(-5px);
+            }
+        }
