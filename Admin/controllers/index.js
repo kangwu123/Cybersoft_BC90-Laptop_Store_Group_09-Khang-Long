@@ -50,7 +50,7 @@ const render_UI = (arr_Product) => {
              </td>
           </tr>
         `;
-        Get_Element_ID().innerHTML = contentTable;
+        Get_Element_ID("productTableBody").innerHTML = contentTable;
     }
 };
 // Delete Action

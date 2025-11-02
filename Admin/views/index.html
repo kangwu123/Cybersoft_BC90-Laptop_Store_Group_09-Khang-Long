@@ -12,10 +12,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Tailwinds -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!--Admin Style  -->
-    <!-- <link rel="stylesheet" href="../../assets/css/admin.css"> -->
-    <link rel="stylesheet" href="../../Admin/views/styleAdmin.css">
-
+    <link rel="stylesheet" href="../../assets/css/admin.css">
 </head>
 
 <body>
@@ -65,7 +65,6 @@
                 <img src="../../assets/images/profile.jpg" alt="profile">
             </a>
         </nav>
-
         <!-- End of Navbar -->
 
         <!-- Dashboard Section -->
@@ -202,7 +201,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <!-- End of Reminders-->
             </div>
         </main>
@@ -255,59 +253,14 @@
                                 <th>Chức Năng</th>
                             </tr>
                         </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>#</td>
-                                <td>MacbookPro M3 16 inch 2023</td>
-                                <td>
-                                    <img src="./../../assets/images/Macbook Pro M3 16 inch 2023.jpg" alt="product">
-                                </td>
-                                <td>$2499</td>
-                                <td>New</td>
-                                <td>
-                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
-                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#</td>
-                                <td>MacbookProM4 16 Inch 2024</td>
-                                <td>
-                                    <img src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg" alt="product">
-                                </td>
-                                <td>$2999</td>
-                                <td>Stock</td>
-                                <td>
-                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
-                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#</td>
-                                <td>Asus TUF Gaming F16 2025</td>
-                                <td>
-                                    <img src="./../../assets/images/Asus/asus_tuf_gaming_f16_2025.png" alt="product">
-                                </td>
-                                <td>$1499</td>
-                                <td>New</td>
-                                <td>
-                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
-                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-
+                        <tbody id="productTableBody"></tbody>
                     </table>
                 </div>
             </div>
         </main>
         <!-- End Product Section -->
 
-
     </div>
-
     <!-- JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -315,6 +268,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
+
+    <!-- FLOWBITE -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+        integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
     <!-- Admin JS -->
     <script src="../../assets/js/Admin/main.js"></script>
 </body>
