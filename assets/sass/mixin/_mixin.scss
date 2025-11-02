@@ -1,0 +1,61 @@
+// Button Primary (Solid)
+@mixin button-style(
+  $bg-color: $primary-Green,
+  $text-color: $light,
+  $hover-bg: darken($primary-Green, 7%),
+  $hover-text: $light
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $p-3 $p-5;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: $box-shadow-soft;
+
+  &:hover {
+    background-color: $hover-bg;
+    color: $hover-text;
+    box-shadow: $box-shadow-strong;
+    transform: translateY(-1px);
+  }
+}
+
+// Button Outline
+@mixin button-outline(
+  $border-color: $primary-Green,
+  $text-color: $primary-Green,
+  $hover-bg: $primary-Green,
+  $hover-text: $light
+) {
+  background-color: transparent;
+  color: $text-color;
+  border: 2px solid $border-color;
+  padding: $p-3 $p-5;
+  border-radius: 0.5rem;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-bg;
+    color: $hover-text;
+  }
+}
+
+// Card Style
+@mixin card-style($bg-color: $light, $radius: 1rem, $shadow: $box-shadow-soft) {
+  background-color: $bg-color;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $p-6;
+  transition: all 0.5s;
+
+  &:hover {
+    box-shadow: $box-shadow-strong;
+  }
+}

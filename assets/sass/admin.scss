@@ -1,7 +1,8 @@
-@import "./variable/_variable.scss";
-@import "./mixin/_mixin.scss";
-@import "./base/_reset.scss";
-@import "./header/_admin-header.scss";
-@import "./back_to_top/_backtotop.scss";
-@import "./admin-table/_admin-table.scss";
-@import "./modal/_admin-modal.scss";
+@import "./variable/_admin-variable.scss";
+@import "./base/_reset-admin.scss";
+@import "./Admin/_admin-header.scss";
+@import "./Admin/_admin-body.scss";
+@import "./Admin/_admin-select.scss"
+// @import "./back_to_top/_backtotop.scss";
+// @import "./admin-table/_admin-table.scss";
+// @import "./modal/_admin-modal.scss";

@@ -1,9 +1,10 @@
 // Theme Color Palette
 $primary: #dbf9eb;
-$primary-NavyBlue: #667eea;
-$primary-Purple: #764ba2;
+$primary-Blue: #2ade;
+$primary-Green: #04fa41;
 $primary-Darkblue: #00113d;
 $secondary: #a7f3d0;
+$primary-crimson: #dc143c;
 
 $light: white;
 $dark: black;
@@ -12,10 +13,14 @@ $gray-600: #4b5563;
 $warning: #f59e0b;
 $error: #ef4444;
 $success: #22c55e;
+$new: #00c853;
 
 // Gradients & Effects
-$gradient-primary: linear-gradient(135deg, $primary, $primary-NavyBlue);
-$gradient-dark: linear-gradient(135deg, $primary-Purple, $primary-Darkblue);
+$gradient-primary: linear-gradient(135deg, $primary, $primary-Blue);
+$gradient-dark: linear-gradient(135deg, $primary-Green, $primary-Darkblue);
+
+$box-shadow-soft: 0 4px 12px rgba(17, 24, 39, 0.1);
+$box-shadow-strong: 0 6px 20px rgba(17, 24, 39, 0.15);
 
 // Font size
 $text-xs: 0.75rem; // 12px
@@ -30,6 +35,13 @@ $text-5xl: 3rem; // 48px
 $text-6xl: 3.75rem; // 60px
 $text-7xl: 4.5rem; // 72px
 
+// Line-height
+$h-xl: 40px;
+$h-2xl: 50px;
+$h-3xl: 60px;
+$h-4xl: 70px;
+$h-5xl: 80px;
+$h-6xl: 90px;
 // Font-weight
 $font-light: 300;
 $font-normal: 400;
@@ -39,3 +51,92 @@ $font-bold: 700;
 $font-extrabold: 800;
 $font-black: 900;
 
+// Margin
+$m-1: 0.25rem;
+$m-2: 0.5rem;
+$m-3: 0.75rem;
+$m-4: 1rem;
+$m-5: 1.25rem;
+$m-6: 1.5rem;
+$m-7: 1.75rem;
+$m-8: 2rem;
+$m-9: 2.25rem;
+$m-10: 2.5rem;
+
+// Padding
+$p-1: 0.25rem;
+$p-2: 0.5rem;
+$p-3: 0.75rem;
+$p-4: 1rem;
+$p-5: 1.25rem;
+$p-6: 1.5rem;
+$p-7: 1.75rem;
+$p-8: 2rem;
+$p-9: 2.25rem;
+$p-10: 2.5rem;
+
+@for $i from 1 through 12 {
+  $value: $i * 0.25rem;
+
+  // Margin
+  .m-#{$i} {
+    margin: $value;
+  }
+
+  .mt-#{$i} {
+    margin-top: $value;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $value;
+  }
+
+  .ml-#{$i} {
+    margin-left: $value;
+  }
+
+  .mr-#{$i} {
+    margin-right: $value;
+  }
+
+  .mx-#{$i} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .my-#{$i} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  // Padding (đã sửa đúng)
+  .p-#{$i} {
+    padding: $value;
+  }
+
+  .pt-#{$i} {
+    padding-top: $value;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $value;
+  }
+
+  .pl-#{$i} {
+    padding-left: $value;
+  }
+
+  .pr-#{$i} {
+    padding-right: $value;
+  }
+
+  .px-#{$i} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .py-#{$i} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}

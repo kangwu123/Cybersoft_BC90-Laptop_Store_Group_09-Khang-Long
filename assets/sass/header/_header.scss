@@ -4,11 +4,11 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to right, #667eea, #764ba2);
+    background-image: linear-gradient(to right, #2ade, #04fa41);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 15px 0;
-
+    height: 7rem;
     .container {
         display: flex;
         justify-content: space-between;
@@ -22,9 +22,9 @@ header {
     .logo {
         display: flex;
         align-items: center;
-
         img {
-            height: 60px;
+            height: 80px;
+            padding-left: 2.75rem;
         }
     }
 
@@ -103,7 +103,7 @@ header {
                 border: 1px solid #ddd;
                 border-radius: 20px;
                 outline: none;
-                width: 200px;
+                width: 250px;
 
                 &:focus {
                     border-color: #ff4747;
@@ -129,7 +129,7 @@ header {
         .cart-icon {
             position: relative;
             cursor: pointer;
-
+            margin-top: 0.5rem;
             span {
                 position: absolute;
                 top: -8px;

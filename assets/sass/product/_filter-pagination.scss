@@ -15,7 +15,6 @@
         display: flex;
         align-items: center;
         gap: 10px;
-
         label {
             font-weight: 500;
             color: #333;
@@ -31,13 +30,11 @@
             min-width: 180px;
             cursor: pointer;
             transition: border-color 0.3s ease;
-
             &:hover,
             &:focus {
                 border-color: #ff324d;
                 outline: none;
             }
-
             option {
                 padding: 8px;
             }
@@ -52,7 +49,6 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-
     .load-more-btn {
         padding: 12px 30px;
         background-color: #ff324d;
@@ -63,7 +59,6 @@
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 2px 10px rgba(255, 50, 77, 0.2);
-
         &:hover {
             background-color: darken(#ff324d, 10%);
             transform: translateY(-2px);
