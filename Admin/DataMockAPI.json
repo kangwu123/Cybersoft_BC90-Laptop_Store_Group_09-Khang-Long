@@ -6,20 +6,10 @@
     "brand": "Apple",
     "os": "macOS",
     "battery": "100Wh",
-    "description": "The latest Macbook Pro with the powerful M4 chip, delivering incredible performance for professionals.",
+    "shortdescription": "The latest Macbook Pro with the powerful M4 chip, delivering incredible performance for professionals.",
     "image": "../assets/images/MacbookProM4 16 Inch 2024.jpg",
     "stock": "new",
-    "specifications": {
-      "cpu": "Apple M4 Pro",
-      "ram": "18GB unified memory",
-      "storage": "512GB SSD",
-      "gpu": "Integrated 16-core GPU",
-      "display": {
-        "size": "16.2 inch",
-        "resolution": "Liquid Retina XDR (3456x2234)",
-        "panel": "mini-LED"
-      }
-    }
+    "specifications": "CPU: Apple M4 Pro, RAM: 16GB unified memory, Storage: 512GB SSD, VGA: Integrated 16-core, Display: 16.2 inch Liquid Retina XDR (3456x2234), mini-LED panel"
   },
   {
     "id": "KLLaptop02",
@@ -29,19 +19,9 @@
     "image": "../assets/images/Asus/Laptop Asus ROG Strix G16 G615LR-S5289W.png",
     "os": "Windows 11 Home",
     "battery": "90Wh",
-    "description": "A powerful gaming laptop from Asus ROG series, designed for competitive gaming.",
+    "shortdescription": "A powerful gaming laptop from Asus ROG series, designed for competitive gaming.",
     "stock": "new",
-    "specifications": {
-      "cpu": "Intel Core i7-13650HX",
-      "ram": "16GB DDR5",
-      "storage": "1TB PCIe 4.0 NVMe M.2 SSD",
-      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
-      "display": {
-        "size": "16 inch",
-        "resolution": "Full HD+ (1920 x 1200)",
-        "panel": "IPS, 165Hz"
-      }
-    }
+    "specifications": "CPU: Intel Core i7-13650HX, RAM: 16GB DDR5, Storage: 1TB PCIe 4.0 NVMe M.2 SSD,VGA: NVIDIA GeForce RTX 4060 8GB GDDR6,Display: 16 inch Full HD+ (1920 x 1200),IPS, 165Hz"
   },
   {
     "id": "KLLaptop03",
@@ -51,19 +31,9 @@
     "image": "../assets/images/Dell/Dell Gaming G15 5515 R75800H.png",
     "os": "Windows 11 Home",
     "battery": "56Wh",
-    "description": "Dell G15 gaming laptop with AMD Ryzen processor for a smooth gaming experience.",
+    "shortdescription": "Dell G15 gaming laptop with AMD Ryzen processor for a smooth gaming experience.",
     "stock": "stock",
-    "specifications": {
-      "cpu": "AMD Ryzen 7 5800H",
-      "ram": "16GB DDR4",
-      "storage": "512GB M.2 PCIe NVMe SSD",
-      "gpu": "NVIDIA GeForce RTX 3050 Ti",
-      "display": {
-        "size": "15.6 inch",
-        "resolution": "Full HD (1920x1080)",
-        "panel": "IPS, 120Hz"
-      }
-    }
+    "specifications": "CPU: AMD Ryzen 7 5800H,RAM: 16GB DDR4, Storage: 512GB M.2 PCIe NVMe SSD, VGA: NVIDIA GeForce RTX 3050 Ti, Display: 15.6 inch, Full HD (1920x1080) IPS, 120Hz"
   },
   {
     "id": "KLLaptop04",
@@ -73,18 +43,44 @@
     "image": "../assets/images/MSI Gamming/LaptopMSI Katana 15 B13UDXK.png",
     "os": "Windows 11 Home",
     "battery": "53.5Wh",
-    "description": "Sharpen your game with the MSI Katana 15, a perfect blend of performance and design for gamers.",
+    "shortdescription": "Sharpen your game with the MSI Katana 15, a perfect blend of performance and design for gamers.",
     "stock": "stock",
-    "specifications": {
-      "cpu": "Intel Core i5-13420H",
-      "ram": "8GB DDR5",
-      "storage": "512GB NVMe SSD",
-      "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
-      "display": {
-        "size": "15.6 inch",
-        "resolution": "Full HD (1920x1080)",
-        "panel": "IPS-Level, 144Hz"
-      }
-    }
+    "specifications": "CPU: Intel Core i5-13420H, RAM: 8GB DDR5, Storage:512GB NVMe SSD,VGA: NVIDIA GeForce RTX 3050, Display: 15.6 inch, Full HD (1920x1080),IPS-Level, 144Hz"
+  },
+  {
+    "id": "KLLaptop05",
+    "name": "Dell 14 Pro 14250",
+    "price": 16990000,
+    "brand": "Dell",
+    "image": "../assets/images/Dell/dell-pro-14-pc14250.png",
+    "os": "Windows 11 Home",
+    "battery": "3-cell, 45Wh",
+    "shortdescription": "Dell 14 Pro 14250 is a powerful laptop for Work Office experience.",
+    "stock": "stock",
+    "specifications": "CPU: Intel® Core™ 5 120U,RAM: 8GB DDR5 5600MHz(1x8GB,2 khe,nâng cấp tối đa 64GB), Storage 512GB M.2 PCIe NVMe SSD, VGA: Onboard Integrated Intel® Graphics,Display : 14 inch FHD, (1920 x 1200),16:10,Anti-Glare, 300 nits,IPS, 600Hz"
+  },
+  {
+    "id": "KLLaptop06",
+    "name": "GIGABYTE G5 KF5",
+    "price": 22990000,
+    "brand": "GIGABYTE",
+    "image": "../assets/images/Dell Gigabite Lenovo/laptop-gaming-gigabyte-g5-kf5.png",
+    "os": "Windows 11 Home",
+    "battery": "Lithium-Ion 54Wh",
+    "shortdescription": "GIGABYTE G5 KF5 is a powerful laptop for Game And Study experience.",
+    "stock": "stock",
+    "specifications": "CPU: 12th Gen Intel® Core™ i7-12650H, RAM: 16GB (2x8G) DDR5-4800 (Max 64GB), Storage: 512GB M.2 2280 x 2 Gen 4, VGA: NVIDIA® GeForce RTX™ 4060 8GB GDDR6, Display: 15.6 inch FHD (1920x1080)pixels 45%NTSC, IPS, 144Hz"
+  },
+  {
+    "id": "KLLaptop07",
+    "name": "Lenovo Legion Y7000 2025",
+    "price": 32990000,
+    "brand": "Lenovo",
+    "image": "../assets/images/Dell Gigabite Lenovo/lenovo-legion-y7000-2025.png",
+    "os": "Windows 11 Home",
+    "battery": "4cell, 60wh",
+    "shortdescription": "GIGABYTE G5 KF5 is a powerful laptop for Game And Study MaxSetting experience.",
+    "stock": "In-stock",
+    "specifications": "CPU: Intel Core i7 14650HX, RAM: 16GB DDR5-5600MHz (hỗ trợ nâng cấp), Storage: 512GB PCIe® 4.0 x4 NVME SSD, VGA: Intel® Graphics + NVIDIA® GeForce RTX 5060 8GB GDDR7 115W, Display: 15.3 inch 2.5K (2560x1600) độ sáng 400nits, IPS, 180Hz"
   }
 ]

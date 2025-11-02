@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./assets/images/web-traffic.png" />
+    <link rel="icon" type="image/png" href="./../../assets/images/web-traffic.png" />
     <title>Admin - Khang_Long Laptop Store</title>
     <!-- FONT AWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -12,81 +12,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Tailwinds -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!--Admin Style  -->
-    <!-- <link rel="stylesheet" href="../../assets/css/admin.css"> -->
-    <link rel="stylesheet" href="../../Admin/views/styleAdmin.css">
-    <style>
-        .hidden {
-            display: none;
-        }
-        /* Reset <select> defaults */
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border: 0;
-            outline: 0;
-            background: black;
-            color: red;
-            box-shadow: none;
-        }
-
-        select::-ms-expand {
-            display: none;
-        }
-
-        /* Custom Select wrapper */
-        .select {
-            position: relative;
-            display: flex;
-            width: min(20rem, 50vw);
-            height: 3rem;
-            background: Black;
-            border-radius: 2rem;
-            overflow: hidden;
-        }
-
-        .select select {
-            flex: 1;
-            padding: 1em;
-            cursor: pointer;
-        }
-
-        .select::after {
-            content: "▼";
-            position: absolute;
-            right: 1rem;
-            top: 0.5rem;
-            transition: 0.25s all ease;
-            pointer-events: none;
-        }
-
-        .select:hover::after {
-            color: #f39c12;
-            -webkit-animation: bounce 0.5s infinite;
-            animation: bounce 0.5s infinite;
-        }
-
-        @-webkit-keyframes bounce {
-            25% {
-                transform: translatey(5px);
-            }
-
-            75% {
-                transform: translatey(-5px);
-            }
-        }
-
-        @keyframes bounce {
-            25% {
-                transform: translatey(5px);
-            }
-
-            75% {
-                transform: translatey(-5px);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/admin.css">
 </head>
 
 <body>
@@ -136,7 +65,6 @@
                 <img src="../../assets/images/profile.jpg" alt="profile">
             </a>
         </nav>
-
         <!-- End of Navbar -->
 
         <!-- Dashboard Section -->
@@ -273,7 +201,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <!-- End of Reminders-->
             </div>
         </main>
@@ -302,7 +229,7 @@
                 <div class="orders">
                     <div class="header">
                         <i class='bx bx-receipt'></i>
-                        <h3>All Products</h3> 
+                        <h3>All Products</h3>
                         <div class="select filter-brand">
                             <select id="brandFilter" onchange="filterByBrand()">
                                 <option value="all">All Brands</option>
@@ -312,7 +239,7 @@
                                 <option value="MSI">MSI</option>
                             </select>
                         </div>
-                       
+
                         <i class='bx bx-search'></i>
                     </div>
                     <table>
@@ -326,59 +253,14 @@
                                 <th>Chức Năng</th>
                             </tr>
                         </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>#</td>
-                                <td>MacbookPro M3 16 inch 2023</td>
-                                <td>
-                                    <img src="./../../assets/images/Macbook Pro M3 16 inch 2023.jpg" alt="product">
-                                </td>
-                                <td>$2499</td>
-                                <td>New</td>
-                                <td>
-                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
-                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#</td>
-                                <td>MacbookProM4 16 Inch 2024</td>
-                                <td>
-                                    <img src="./../../assets/images/MacbookProM4 16 Inch 2024.jpg" alt="product">
-                                </td>
-                                <td>$2999</td>
-                                <td>Stock</td>
-                                <td>
-                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
-                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#</td>
-                                <td>Asus TUF Gaming F16 2025</td>
-                                <td>
-                                    <img src="./../../assets/images/Asus/asus_tuf_gaming_f16_2025.png" alt="product">
-                                </td>
-                                <td>$1499</td>
-                                <td>New</td>
-                                <td>
-                                    <a href="#" class="edit"> <i class="fa-chisel fa-solid fa-gear"></i></a>
-                                    <a href="#" class="delete"><i class="fa-chisel fa-solid fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-
+                        <tbody id="productTableBody"></tbody>
                     </table>
                 </div>
             </div>
         </main>
         <!-- End Product Section -->
 
-
     </div>
-
     <!-- JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -386,53 +268,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
+
+    <!-- FLOWBITE -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+        integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
     <!-- Admin JS -->
     <script src="../../assets/js/Admin/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const sideMenu = document.querySelectorAll('.side-menu li');
-            const sections = document.querySelectorAll('main');
-            const productsSection = document.getElementById('products-section');
-            const dashboardSection = document.getElementById('dashboard-section');
-
-            // Initially hide the products section
-            productsSection.classList.add('hidden');
-
-            sideMenu.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    sideMenu.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
-
-                    const target = item.querySelector('a').innerText;
-
-                    sections.forEach(section => {
-                        section.classList.add('hidden');
-                    });
-
-                    if (target === 'Dashboard') {
-                        dashboardSection.classList.remove('hidden');
-                    } else if (target === 'Products') {
-                        productsSection.classList.remove('hidden');
-                    }
-                });
-            });
-        });
-
-        function filterByBrand() {
-            var selectedBrand = document.getElementById("brandFilter").value;
-            var tableRows = document.querySelectorAll("#products-section tbody tr");
-
-            tableRows.forEach(function(row) {
-                var productName = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
-                if (selectedBrand === "all" || productName.includes(selectedBrand.toLowerCase())) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>
