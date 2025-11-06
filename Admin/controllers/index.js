@@ -39,7 +39,7 @@ const render_UI = (arr_Product) => {
               <td class="price">${Number(object_Product.price).toLocaleString("vi-VN")} ₫</td>
               <td style="vertical-align: middle;">
                 <span class="stock ${obj_Product.stock === "stock" ? "inventory" : ""}">
-                    ${obj_Product.stock === "new" ? "Hàng mới về": "Hàng tồn kho"}
+                    ${obj_Product.stock === "available" ? "Còn Hàng": "Hết Hàng"}
                 </span>
               </td>
               <td>

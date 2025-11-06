@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!--Boostrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Tailwinds -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!--Admin Style  -->
     <link rel="stylesheet" href="../../assets/css/admin.css">
 </head>
@@ -221,9 +222,102 @@
                 </div>
                 <div class="custom-button">
                     <div class="btn-box">
-                        <button class="fx-activate" id="btn-Add" data-bs-toggle="modal" data-bs-target="#ProductModal">
+                        <button class="fx-activate" id="btn-Add" data-toggle="modal" data-target="#product-modal">
                             <i class="fa fa-plus"></i> Add Product
                         </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div id="product-modal" class="modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <span class="close-btn" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></span>
+                        <h2 id="modal-title">Thêm Sản Phẩm</h2>
+
+                        <form id="addProductForm">
+                            <div class="form-group">
+                                <label for="productId">ID:</label>
+                                <input type="text" id="productId">
+                                <p id="invalid-ID"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productName">Tên sản phẩm:</label>
+                                <input type="text" id="productName">
+                                <p id="invalid-name"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productPrice">Giá:</label>
+                                <input type="number" id="productPrice">
+                                <p id="invalid-price"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productBrand">Thương Hiệu</label>
+                                <select id="productBrand">
+                                    <option selected>Vui lòng chọn Brand</option>
+                                    <option value="Apple">Apple</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="Dell">Dell</option>
+                                    <option value="MSI">MSI</option>
+                                    <option value="Lenovo">Lenovo</option>
+                                    <option value="Gigabyte">Gigabyte</option>
+                                </select>
+                                <p id="invalid-brand"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productImage" class="form-label">Hình Ảnh Sản Phẩm</label>
+                                <input type="url" id="productImg">
+                                <p id="invalid-img"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Os" class="form-label">Operating System</label>
+                                <select class="form-select" id="OS">
+                                    <option value="MacOS">MacOS</option>
+                                    <option value="Windows">Windows</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="battery" class="form-label">Pin</label>
+                                <input type="text" class="form-control" id="battery" name="battery" required>
+                                <p id="invalid-battery"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="shortDescription" class="form-label">Short Desc</label>
+                                <input type="text" id="shortDescription">
+                                <p id="invalid-shortdesc"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productStock">Tình Trạng Hàng</label>
+                                <select class="stock-select" id="productStock">
+                                    <option selected>Còn Hàng Hay Hết Hàng</option>
+                                    <option value="0">Hết Hàng</option>
+                                    <option value="1">Còn Hàng</option>
+                                </select>
+                                <p id="invalid-stock"></p>
+                            </div>
+
+                            <div class="form-desc">
+                                <label for="productDescription" class="form-label">Specifications</label>
+                                <textarea id="productDescription" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-button" id="form-button">
+                                <button id="btnSubmit" type="submit" class="btn-submit">Thêm sản phẩm</button>
+                                <button id="btnUpdate" type="submit" class="btn-update">Cập nhật</button>
+                                <button id="btnClose" type="submit" class="btn-close"
+                                    data-dismiss="modal">Đóng</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -260,6 +354,7 @@
                     </table>
                 </div>
             </div>
+
         </main>
         <!-- End Product Section -->
 
@@ -271,10 +366,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-
-    <!-- FLOWBITE -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-
+    <!-- Boostrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <!-- Axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
         integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
