@@ -18,7 +18,7 @@ class Product {
         this.os = os;
         this.battery = battery;
         this.shortdescription = shortdescription;
-        this.imG = img;
+        this.img = img;
         this.stock = stock;
         this.specifications = specifications
     }
