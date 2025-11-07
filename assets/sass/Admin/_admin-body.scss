@@ -194,7 +194,87 @@
     grid-gap: 10px;
     font-weight: 500;
 }
-
+// Custom Button
+.content main .header {
+  .custom-button {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 700px;
+  }
+  .btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    color: $grey;
+  }
+  .fx-activate {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: $BlurYellow;
+    transform: perspective(1000px);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.8) 0%,
+        transparent 70%
+      );
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #00d4ff, #7000ff, #ff00e5, #00d4ff);
+      background-size: 300% 300%;
+      border-radius: 8px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      animation: border-flow 3s linear infinite;
+    }
+    &:hover {
+      transform: perspective(1000px) rotateX(10deg);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4),
+        0 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+      &::before {
+        width: 300px;
+        height: 300px;
+        opacity: 0.3;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
 .content main .insights{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

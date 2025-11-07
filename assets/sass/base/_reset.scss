@@ -31,3 +31,25 @@
 .img-animate {
     animation: ScaleBigSmall 4s ease-in-out infinite;
 }
+
+@keyframes vibrate {
+  0.50%, 90% {
+   -webkit-transform: translate3d(-0.5px, 0, 0);
+   transform: translate3d(-0.5px, 0, 0);
+ }
+
+0.50%, 80% {
+  -webkit-transform: translate3d(0.5px, 0, 0);
+  transform: translate3d(0.5px, 0, 0);
+}
+
+30%, 50%, 70% {
+  -webkit-transform: translate3d(-0.5px, 0, 0);
+  transform: translate3d(-0.5px, 0, 0);
+}
+
+0.50%, 60% {
+  -webkit-transform: translate3d(0.5px, 0, 0);
+  transform: translate3d(0.5px, 0, 0);
+}
+}

@@ -1,0 +1,189 @@
+// MODAL
+#product-modal {
+    // We target the new .modal-dialog wrapper for sizing
+  .modal-dialog {
+    width: 80%;      // Apply your width here
+    max-width: 80%;  // Override Bootstrap's default max-width
+    margin: 1.75rem auto; // Keep Bootstrap's default vertical margin
+    
+    // Move the animation here so the whole dialog animates in
+    animation: showModal 0.35s ease;
+  }
+  .modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #fff1f5 100%);
+    width: 80%;
+    margin: auto;
+    padding: 25px 35px;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: $box-shadow-strong;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 22px;
+      font-weight: $font-bold;
+      font-size: $text-3xl;
+      letter-spacing: 0.5px;
+      color: #0f4c81;
+      position: relative;
+      padding-bottom: 6px;
+
+      &::after {
+        content: "";
+        width: 55px;
+        height: 3px;
+        background: #4fd1c5;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 16px;
+      top: 12px;
+      font-size: 22px;
+      cursor: pointer;
+      color: $BlurGreen;
+
+      &:hover {
+        color: $danger;
+      }
+    }
+
+    #addProductForm {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: $font-semibold;
+          margin-bottom: 4px;
+        }
+
+        input,
+        select {
+          padding: 10px;
+          border: 1px solid $dark-grey;
+          border-radius: 6px;
+          font-size: $text-base;
+          transition: 0.2s;
+
+          &:focus {
+            border-color: $BlurGreen;
+            box-shadow: 0 0 6px rgba(79, 209, 197, 0.4);
+          }
+        }
+
+        p {
+          font-size: $text-xs;
+          color: $danger;
+          margin: 0;
+        }
+      }
+
+      .form-desc {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 / -1;
+
+        label {
+          font-weight: $font-semibold;
+          margin-bottom: 6px;
+        }
+
+        textarea {
+          width: 100%;
+          padding: 10px 12px;
+          border: 1px solid $dark-grey;
+          border-radius: 6px;
+          font-size: $text-base;
+          transition: 0.2s;
+          resize: vertical;
+
+          &:focus {
+            border-color:$BlurYellow;
+            box-shadow: 0 0 6px rgba(79, 209, 197, 0.4);
+            outline: none;
+          }
+        }
+
+        p {
+          font-size: $text-xs;
+          color: $danger;
+          margin: 4px 0 0 0;
+        }
+      }
+    }
+
+    .form-button {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+
+      button {
+        padding: 10px 18px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: $font-medium;
+        transition: 0.25s;
+
+        &.btn-submit {
+          background: #2563eb;
+          color: #fff;
+
+          &:hover {
+            background: #1e3a8a;
+          }
+        }
+
+        &.btn-update {
+          background: $warning;
+          color: $dark;
+
+          &:hover {
+            filter: brightness(0.9);
+          }
+        }
+
+        &.btn-close {
+          background: $danger;
+          color: $light;
+
+          &:hover {
+            filter: brightness(0.88);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes showModal {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

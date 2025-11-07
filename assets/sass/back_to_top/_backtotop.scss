@@ -72,10 +72,10 @@
   font-size: $text-2xl;
   background-color: $secondary;
   color: red;
-  animation: SlightlyRotate 0.3s infinite;
+  animation: vibrate 0.3s infinite;
 
   &:hover {
-    background-color: $secondary;
+    backgrounvibrated-color: $secondary;
     text-decoration: none;
   }
 }
