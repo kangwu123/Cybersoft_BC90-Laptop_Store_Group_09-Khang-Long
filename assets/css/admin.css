@@ -219,7 +219,8 @@ body {
 .content nav form {
   max-width: 400px;
   width: 100%;
-  margin-right: auto; /* push right-side items to the edge */
+  margin-right: auto;
+  /* push right-side items to the edge */
 }
 
 .content nav form .form-input {
@@ -643,6 +644,80 @@ body {
   margin-bottom: 0;
 }
 
+.content main .bottom-data .orders .admin-table {
+  border-radius: 12px;
+  padding-bottom: 2rem;
+  overflow-x: auto;
+  color: #363949;
+}
+.content main .bottom-data .orders .admin-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1rem;
+  background-color: #f6f6f9;
+  border: 1px solid #4ec9b0;
+  min-width: 700px;
+}
+.content main .bottom-data .orders .admin-table table thead {
+  background-color: #4fd1c5;
+  color: #00113d;
+}
+.content main .bottom-data .orders .admin-table table thead th {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  border-bottom: 2px solid #a7f3d0;
+  white-space: nowrap;
+}
+.content main .bottom-data .orders .admin-table table tbody tr {
+  border-bottom: 1px solid #a7f3d0;
+  transition: background 0.2s;
+}
+.content main .bottom-data .orders .admin-table table tbody tr:hover {
+  background-color: rgb(240.7297297297, 251.2702702703, 250.2972972973);
+}
+.content main .bottom-data .orders .admin-table table tbody tr td {
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+}
+.content main .bottom-data .orders .admin-table table tbody tr td img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content main .bottom-data .orders .admin-table table tbody tr td .btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: 0.2s;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.1);
+  color: #f6f6f9;
+}
+.content main .bottom-data .orders .admin-table table tbody tr td .btn.edit {
+  background-color: #388E3C;
+  margin-left: 0.5rem;
+}
+.content main .bottom-data .orders .admin-table table tbody tr td .btn.edit:hover {
+  background-color: rgb(70.4242424242, 178.5757575758, 75.4545454545);
+  transform: scale(1.05);
+}
+.content main .bottom-data .orders .admin-table table tbody tr td .btn.delete {
+  background-color: #D32F2F;
+  margin-left: 0.5rem;
+}
+.content main .bottom-data .orders .admin-table table tbody tr td .btn.delete:hover {
+  background-color: rgb(219.9047619048, 89.0952380952, 89.0952380952);
+  transform: scale(1.05);
+}
+.content main .bottom-data .orders .admin-table table tbody .price {
+  font-weight: 600;
+  color: #ff416c;
+}
+
 @media screen and (max-width: 768px) {
   .sidebar {
     width: 200px;
@@ -650,6 +725,9 @@ body {
   .content {
     width: calc(100% - 60px);
     left: 200px;
+  }
+  .admin-table table {
+    font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 576px) {
@@ -674,7 +752,8 @@ body {
     background: var(--danger);
     border-radius: 0 36px 36px 0;
   }
-  .content nav form.show ~ .notif, .content nav form.show ~ .profile {
+  .content nav form.show ~ .notif,
+  .content nav form.show ~ .profile {
     display: none;
   }
   .content main .insights {
@@ -688,6 +767,19 @@ body {
   }
   .content main .bottom-data .reminders .task-list {
     min-width: 340px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .admin-table table {
+    font-size: 0.9rem;
+    min-width: 600px;
+  }
+  .admin-table table th, .admin-table table td {
+    padding: 0.7rem 0.9rem;
+  }
+  .admin-table table img {
+    width: 50px;
+    height: 50px;
   }
 }
 .hidden {

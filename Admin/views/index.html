@@ -229,7 +229,6 @@
                 </div>
             </div>
 
-
             <!-- Modal -->
             <div id="product-modal" class="modal">
                 <div class="modal-dialog" role="document">
@@ -279,7 +278,7 @@
                             <div class="form-group">
                                 <label for="Os" class="form-label">Operating System</label>
                                 <select class="form-select" id="OS">
-                                      <option selected>Please choos OS</option>
+                                    <option selected>Please choose OS</option>
                                     <option value="MacOS">MacOS</option>
                                     <option value="Windows 11 Home">Windows 11 Home</option>
                                 </select>
@@ -312,6 +311,7 @@
                             <div class="form-desc">
                                 <label for="productDescription" class="form-label">Specifications</label>
                                 <textarea id="productDescription" rows="3"></textarea>
+                                <p id="invalid-specification"></p>
                             </div>
 
                             <div class="form-button" id="form-button">
@@ -345,23 +345,23 @@
                         <i class='bx bx-search'></i>
                     </div>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Tên</th>
-                                <th>Hình Ảnh</th>
-                                <th>Giá Tiền</th>
-                                <th>Tình Trạng Hàng</th>
-                                <th>Chức Năng</th>
-                            </tr>
-                        </thead>
-                        <tbody id="productTableBody"></tbody>
-                    </table>
-
+                    <div class="admin-table" style="display:block;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID Product</th>
+                                    <th>Product Name</th>
+                                    <th>Images</th>
+                                    <th>Price</th>
+                                    <th>Product Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-
         </main>
         <!-- End Product Section -->
 
