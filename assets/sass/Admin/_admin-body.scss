@@ -1,15 +1,16 @@
-.content{
-  width: calc(100% - 230px);
-   left: 230px;
-   position: relative;
-   transition: all .3s ease;
- }
-.sidebar.close ~ .content{
-  width: calc(100% - 60px);
-  left: 60px;
+.content {
+    width: calc(100% - 230px);
+    left: 230px;
+    position: relative;
+    transition: all .3s ease;
 }
 
-.content nav{
+.sidebar.close~.content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.content nav {
     height: 56px;
     background: var(--light);
     padding: 0 24px 0 0;
@@ -22,7 +23,7 @@
     z-index: 1000;
 }
 
-.content nav::before{
+.content nav::before {
     content: "";
     position: absolute;
     width: 40px;
@@ -33,29 +34,30 @@
     box-shadow: -20px -20px 0 var(--light);
 }
 
-.content nav a{
+.content nav a {
     color: var(--dark);
 }
 
-.content nav .bx.bx-menu{
+.content nav .bx.bx-menu {
     cursor: pointer;
     color: var(--dark);
     flex: 0 0 auto;
 }
 
-.content nav form{
+.content nav form {
     max-width: 400px;
     width: 100%;
-    margin-right: auto; /* push right-side items to the edge */
+    margin-right: auto;
+    /* push right-side items to the edge */
 }
 
-.content nav form .form-input{
+.content nav form .form-input {
     display: flex;
     align-items: center;
     height: 36px;
 }
 
-.content nav form .form-input input{
+.content nav form .form-input input {
     flex-grow: 1;
     padding: 0 16px;
     height: 100%;
@@ -67,7 +69,7 @@
     color: var(--dark);
 }
 
-.content nav form .form-input button{
+.content nav form .form-input button {
     width: 80px;
     height: 100%;
     display: flex;
@@ -82,12 +84,12 @@
     cursor: pointer;
 }
 
-.content nav .notif{
+.content nav .notif {
     font-size: 20px;
     position: relative;
 }
 
-.content nav .notif .count{
+.content nav .notif .count {
     position: absolute;
     top: -6px;
     right: -6px;
@@ -104,14 +106,14 @@
     justify-content: center;
 }
 
-.content nav .profile img{
+.content nav .profile img {
     width: 36px;
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.content nav .theme-toggle{
+.content nav .theme-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
@@ -125,7 +127,7 @@
     flex: 0 0 auto;
 }
 
-.content nav .theme-toggle::before{
+.content nav .theme-toggle::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -137,17 +139,17 @@
     transition: all 0.3s ease;
 }
 
-.content nav #theme-toggle:checked+.theme-toggle::before{
+.content nav #theme-toggle:checked+.theme-toggle::before {
     left: calc(100% - (25px - 4px) - 2px);
 }
 
-.content main{
+.content main {
     width: 100%;
     padding: 36px 24px;
     max-height: calc(100vh - 56px);
 }
 
-.content main .header{
+.content main .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,34 +157,34 @@
     flex-wrap: wrap;
 }
 
-.content main .header .left h1{
+.content main .header .left h1 {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--dark);
 }
 
-.content main .header .left .breadcrumb{
+.content main .header .left .breadcrumb {
     display: flex;
     align-items: center;
     grid-gap: 16px;
 }
 
-.content main .header .left .breadcrumb li{
+.content main .header .left .breadcrumb li {
     color: var(--dark);
 }
 
-.content main .header .left .breadcrumb li a{
+.content main .header .left .breadcrumb li a {
     color: var(--dark-grey);
     pointer-events: none;
 }
 
-.content main .header .left .breadcrumb li a.active{
+.content main .header .left .breadcrumb li a.active {
     color: var(--primary);
     pointer-events: none;
 }
 
-.content main .header .report{
+.content main .header .report {
     height: 36px;
     padding: 0 16px;
     border-radius: 36px;
@@ -194,95 +196,103 @@
     grid-gap: 10px;
     font-weight: 500;
 }
+
 // Custom Button
 .content main .header {
-  .custom-button {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 5px;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 700px;
-  }
-  .btn-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  button {
-    position: relative;
-    width: 200px;
-    height: 60px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    overflow: hidden;
-    color: $grey;
-  }
-  .fx-activate {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: $BlurYellow;
-    transform: perspective(1000px);
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.8) 0%,
-        transparent 70%
-      );
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: all 0.6s ease;
+    .custom-button {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 5px;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 700px;
     }
-    &::after {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(45deg, #00d4ff, #7000ff, #ff00e5, #00d4ff);
-      background-size: 300% 300%;
-      border-radius: 8px;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      animation: border-flow 3s linear infinite;
+
+    .btn-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    &:hover {
-      transform: perspective(1000px) rotateX(10deg);
-      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4),
-        0 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
-      &::before {
-        width: 300px;
-        height: 300px;
-        opacity: 0.3;
-      }
-      &::after {
-        opacity: 1;
-      }
+
+    button {
+        position: relative;
+        width: 200px;
+        height: 60px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        color: $grey;
     }
-  }
+
+    .fx-activate {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: $BlurYellow;
+        transform: perspective(1000px);
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle,
+                    rgba(255, 255, 255, 0.8) 0%,
+                    transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #00d4ff, #7000ff, #ff00e5, #00d4ff);
+            background-size: 300% 300%;
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: border-flow 3s linear infinite;
+        }
+
+        &:hover {
+            transform: perspective(1000px) rotateX(10deg);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+
+            &::before {
+                width: 300px;
+                height: 300px;
+                opacity: 0.3;
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
 }
-.content main .insights{
+
+.content main .insights {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 24px;
     margin-top: 36px;
 }
 
-.content main .insights li{
+.content main .insights li {
     padding: 24px;
     background: var(--light);
     border-radius: 20px;
@@ -292,7 +302,7 @@
     cursor: pointer;
 }
 
-.content main .insights li .bx{
+.content main .insights li .bx {
     width: 80px;
     height: 80px;
     border-radius: 10px;
@@ -302,37 +312,37 @@
     justify-content: center;
 }
 
-.content main .insights li:nth-child(1) .bx{
+.content main .insights li:nth-child(1) .bx {
     background: var(--light-primary);
     color: var(--primary);
 }
 
-.content main .insights li:nth-child(2) .bx{
+.content main .insights li:nth-child(2) .bx {
     background: var(--light-warning);
     color: var(--warning);
 }
 
-.content main .insights li:nth-child(3) .bx{
+.content main .insights li:nth-child(3) .bx {
     background: var(--light-success);
     color: var(--success);
 }
 
-.content main .insights li:nth-child(4) .bx{
+.content main .insights li:nth-child(4) .bx {
     background: var(--light-danger);
     color: var(--danger);
 }
 
-.content main .insights li .info h3{
+.content main .insights li .info h3 {
     font-size: 24px;
     font-weight: 600;
     color: var(--dark);
 }
 
-.content main .insights li .info p{
+.content main .insights li .info p {
     color: var(--dark);
 }
 
-.content main .bottom-data{
+.content main .bottom-data {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
@@ -341,75 +351,75 @@
     color: var(--dark);
 }
 
-.content main .bottom-data>div{
+.content main .bottom-data>div {
     border-radius: 20px;
     background: var(--light);
     padding: 24px;
     overflow-x: auto;
 }
 
-.content main .bottom-data .header{
+.content main .bottom-data .header {
     display: flex;
     align-items: center;
     grid-gap: 16px;
     margin-bottom: 24px;
 }
 
-.content main .bottom-data .header h3{
+.content main .bottom-data .header h3 {
     margin-right: auto;
     font-size: 24px;
     font-weight: 600;
 }
 
-.content main .bottom-data .header .bx{
+.content main .bottom-data .header .bx {
     cursor: pointer;
 }
 
-.content main .bottom-data .orders{
+.content main .bottom-data .orders {
     flex-grow: 1;
     flex-basis: 500px;
 }
 
-.content main .bottom-data .orders table{
+.content main .bottom-data .orders table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.content main .bottom-data .orders table th{
+.content main .bottom-data .orders table th {
     padding-bottom: 12px;
     font-size: 13px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
 
-.content main .bottom-data .orders table td{
+.content main .bottom-data .orders table td {
     padding: 16px 0;
 }
 
-.content main .bottom-data .orders table tr td:first-child{
+.content main .bottom-data .orders table tr td:first-child {
     display: flex;
     align-items: center;
     grid-gap: 12px;
     padding-left: 6px;
 }
 
-.content main .bottom-data .orders table td img{
+.content main .bottom-data .orders table td img {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.content main .bottom-data .orders table tbody tr{
+.content main .bottom-data .orders table tbody tr {
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.content main .bottom-data .orders table tbody tr:hover{
+.content main .bottom-data .orders table tbody tr:hover {
     background: var(--grey);
 }
 
-.content main .bottom-data .orders table tr td .status{
+.content main .bottom-data .orders table tr td .status {
     font-size: 10px;
     padding: 6px 16px;
     color: var(--light);
@@ -417,28 +427,28 @@
     font-weight: 700;
 }
 
-.content main .bottom-data .orders table tr td .status.completed{
+.content main .bottom-data .orders table tr td .status.completed {
     background: var(--success);
 }
 
-.content main .bottom-data .orders table tr td .status.process{
+.content main .bottom-data .orders table tr td .status.process {
     background: var(--primary);
 }
 
-.content main .bottom-data .orders table tr td .status.pending{
+.content main .bottom-data .orders table tr td .status.pending {
     background: var(--warning);
 }
 
-.content main .bottom-data .reminders{
+.content main .bottom-data .reminders {
     flex-grow: 1;
     flex-basis: 300px;
 }
 
-.content main .bottom-data .reminders .task-list{
+.content main .bottom-data .reminders .task-list {
     width: 100%;
 }
 
-.content main .bottom-data .reminders .task-list li{
+.content main .bottom-data .reminders .task-list li {
     width: 100%;
     margin-bottom: 16px;
     background: var(--grey);
@@ -449,87 +459,191 @@
     justify-content: space-between;
 }
 
-.content main .bottom-data .reminders .task-list li .task-title{
+.content main .bottom-data .reminders .task-list li .task-title {
     display: flex;
     align-items: center;
 }
 
-.content main .bottom-data .reminders .task-list li .task-title p{
+.content main .bottom-data .reminders .task-list li .task-title p {
     margin-left: 6px;
 }
 
-.content main .bottom-data .reminders .task-list li .bx{
-  cursor: pointer;  
+.content main .bottom-data .reminders .task-list li .bx {
+    cursor: pointer;
 }
 
-.content main .bottom-data .reminders .task-list li.completed{
+.content main .bottom-data .reminders .task-list li.completed {
     border-left: 10px solid var(--success);
 }
 
-.content main .bottom-data .reminders .task-list li.not-completed{
+.content main .bottom-data .reminders .task-list li.not-completed {
     border-left: 10px solid var(--danger);
 }
 
-.content main .bottom-data .reminders .task-list li:last-child{
-   margin-bottom: 0;
+.content main .bottom-data .reminders .task-list li:last-child {
+    margin-bottom: 0;
 }
 
-@media screen and (max-width: 768px) {
-    .sidebar{
-        width: 200px;
-    }
+.content main .bottom-data .orders .admin-table {
+    border-radius: 12px;
+    padding-bottom: 2rem;
+    overflow-x: auto;
+    color: $dark;
 
-    .content{
-        width: calc(100% - 60px);
-        left: 200px;
-    }
-
-}
-
-@media screen and (max-width: 576px) {
-    
-    .content nav form .form-input input{
-        display: none;
-    }
-
-    .content nav form .form-input button{
-        width: auto;
-        height: auto;
-        background: transparent;
-        color: var(--dark);
-        border-radius: none;
-    }
-
-    .content nav form.show .form-input input{
-        display: block;
+    table {
         width: 100%;
-    }
+        border-collapse: collapse;
+        text-align: left;
+        font-size: $text-base;
+        background-color: $light;
+        border: 1px solid $greenCyan;
+        min-width: 700px;
 
-    .content nav form.show .form-input button{
-        width: 36px;
-        height: 100%;
-        color: var(--light);
-        background: var(--danger);
-        border-radius: 0 36px 36px 0;
-    }
+        thead {
+            background-color: $primary-Aquamarine;
+            color: $primary-Darkblue;
 
-    .content nav form.show~.notif, .content nav form.show~.profile{
-        display: none;
-    }
+            th {
+                padding: $p-4 $p-5;
+                font-weight: $font-semibold;
+                border-bottom: 2px solid $secondary;
+                white-space: nowrap;
+            }
+        }
 
-    .content main .insights {
-        grid-template-columns: 1fr;
-    }
+        tbody {
+            tr {
+                border-bottom: 1px solid $secondary;
+                transition: background 0.2s;
 
-    .content main .bottom-data .header{
-        min-width: 340px;
-    }
+                &:hover {
+                    background-color: lighten($primary-Aquamarine, 40%);
+                }
 
-    .content main .bottom-data .orders table{
-        min-width: 340px;
-    }
+                td {
+                    padding: $p-4 $p-5;
+                    vertical-align: middle;
 
-    .content main .bottom-data .reminders .task-list{
-        min-width: 340px;
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        object-fit: cover;
+                    }
+
+                    .btn {
+                        padding: $p-2 $p-4;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-size: $text-sm;
+                        font-weight: $font-medium;
+                        transition: 0.2s;
+                        box-shadow: $box-shadow-soft;
+                        color: $light;
+
+                        &.edit {
+                            background-color: $success;
+                            margin-left: $m-2;
+
+                            &:hover {
+                                background-color: lighten($success, 10%);
+                                transform: scale(1.05);
+                            }
+                        }
+
+                        &.delete {
+                            background-color: $danger;
+                            margin-left: $m-2;
+
+                            &:hover {
+                                background-color: lighten($danger, 10%);
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+            }
+            .price {
+                font-weight: $font-semibold;
+                color: $primary-RosePink;
+            }
+        }
     }
 }
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 200px;
+        }
+
+        .content {
+            width: calc(100% - 60px);
+            left: 200px;
+        }
+        .admin-table table {
+           font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+
+        .content nav form .form-input input {
+            display: none;
+        }
+
+        .content nav form .form-input button {
+            width: auto;
+            height: auto;
+            background: transparent;
+            color: var(--dark);
+            border-radius: none;
+        }
+
+        .content nav form.show .form-input input {
+            display: block;
+            width: 100%;
+        }
+
+        .content nav form.show .form-input button {
+            width: 36px;
+            height: 100%;
+            color: var(--light);
+            background: var(--danger);
+            border-radius: 0 36px 36px 0;
+        }
+
+        .content nav form.show~.notif,
+        .content nav form.show~.profile {
+            display: none;
+        }
+
+        .content main .insights {
+            grid-template-columns: 1fr;
+        }
+
+        .content main .bottom-data .header {
+            min-width: 340px;
+        }
+
+        .content main .bottom-data .orders table {
+            min-width: 340px;
+        }
+
+        .content main .bottom-data .reminders .task-list {
+            min-width: 340px;
+        }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1300px){
+        .admin-table table 
+        {
+            font-size: 0.9rem;
+            min-width: 600px;
+          th,td{
+            padding: 0.7rem 0.9rem;
+          }
+          img{
+            width: 50px;
+            height: 50px;      
+          }
+        }
+    }
