@@ -44,7 +44,7 @@ const render_UI = (arr_Product) => {
            <tr>
               <td>${obj_Product.id}</td> <td>${obj_Product.name}</td>
               <td>
-                 <img src="${obj_Product.image}" alt="${obj_Product.name}">
+                 <img src="${obj_Product.img}" alt="${obj_Product.name}">
               </td>
               <td class="price">${Number(obj_Product.price).toLocaleString(
                 "vi-VN"
@@ -55,10 +55,10 @@ const render_UI = (arr_Product) => {
                 </span>
               </td>
               <td>
-                 <button class="btn btn-info" onclick="btn_Edit('${obj_Product.id}')
+                 <button class="btn edit" onclick="btn_Edit('${obj_Product.id}')
                        "data-toggle="modal" data-target="#product-modal"> Sửa
                 </button>
-                <button class="btn btn-danger" onclick="btn_Delete('${
+                <button class="btn delete" onclick="btn_Delete('${
                   obj_Product.id
                 }')"> Xóa </button>
              </td>
@@ -110,7 +110,7 @@ const btn_Edit = (id) => {
       Get_Element_ID("OS").value = obj_Product.os;
       Get_Element_ID("battery").value = obj_Product.battery;
       Get_Element_ID("shortDescription").value = obj_Product.shortdescription;
-      Get_Element_ID("productImg").value = obj_Product.image;
+      Get_Element_ID("productImg").value = obj_Product.img;
       // Stock Condition
       const stockValue = obj_Product.stock.toLowerCase();
       let stockForSelect = "out of stock"; 
@@ -228,18 +228,22 @@ Get_Element_ID("btnSubmit").onclick = function (e) {
     "(*) Vui lòng nhập mô tả ngắn"
   );
 
-  // --- Image ---
-  isValid &=
-    validation.checkEmpty(
-      input_img,
-      "invalid-img",
-      "(*) Vui lòng nhập URl sản phẩm"
-    ) &&
-    validation.checkURL(
+// --- Image ---
+  // FIX: Áp dụng logic validation hình ảnh đã sửa
+  let isImageValid = validation.checkEmpty(
+    input_img,
+    "invalid-img",
+    "(*) Vui lòng nhập URl sản phẩm"
+  );
+  if (isImageValid) {
+    // Chỉ kiểm tra cú pháp URL nếu trường không rỗng
+    isImageValid &= validation.checkURL(
       input_img,
       "invalid-img",
       "(*) Vui lòng nhập đúng cú pháp"
     );
+  }
+  isValid &= isImageValid;
 
   // --- Stock ---
   isValid &= validation.checkOption(
@@ -308,8 +312,8 @@ Get_Element_ID("btnUpdate").onclick = function (e) {
   const input_battery = Get_Element_ID("battery").value;
   const input_short_desc = Get_Element_ID("shortDescription").value;
   const input_img = Get_Element_ID("productImg").value;
-  let input_stock_raw = Get_Element_ID("productStock").value;
-  const input_stock = input_stock_raw === "1" ? "stock" : "0";
+// FIX: Lấy giá trị Stock trực tiếp (chuỗi mới)
+  const input_stock = Get_Element_ID("productStock").value;
   const input_specifications = Get_Element_ID("productDescription").value;
 
   // Boolean
