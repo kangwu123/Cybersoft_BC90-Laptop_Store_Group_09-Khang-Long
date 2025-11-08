@@ -23,14 +23,14 @@ class Validation {
         return true;
     }
     checkOption(idSelect, errorID, mess) {
-    const optionIndex = dom_Element_ID(idSelect).selectedIndex;
+    const optionIndex = Get_Element_ID(idSelect).selectedIndex;
     if (optionIndex === 0) {
-      dom_Element_ID(errorID).style.display = "block";
-      dom_Element_ID(errorID).innerHTML = mess;
+      Get_Element_ID(errorID).style.display = "block";
+      Get_Element_ID(errorID).innerHTML = mess;
       return false;
     }
-    dom_Element_ID(errorID).style.display = "none";
-    dom_Element_ID(errorID).innerHTML = "";
+    Get_Element_ID(errorID).style.display = "none";
+    Get_Element_ID(errorID).innerHTML = "";
     return true;
   }
 
@@ -38,12 +38,12 @@ class Validation {
     const pattern =
       /^(https?:\/\/)([a-zA-Z0-9.-]+)(\/[^\s]*)?\.(jpg|jpeg|png|gif|webp)$/i;
     if (!pattern.test(value)) {
-      dom_Element_ID(errorID).style.display = "block";
-      dom_Element_ID(errorID).innerHTML = mess;
+      Get_Element_ID(errorID).style.display = "block";
+      Get_Element_ID(errorID).innerHTML = mess;
       return false;
     }
-    dom_Element_ID(errorID).style.display = "none";
-    dom_Element_ID(errorID).innerHTML = "";
+    Get_Element_ID(errorID).style.display = "none";
+    Get_Element_ID(errorID).innerHTML = "";
     return true;
   }
 }
