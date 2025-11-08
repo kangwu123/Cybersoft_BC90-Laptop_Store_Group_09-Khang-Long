@@ -1,14 +1,14 @@
 [
   {
     "id": "KLLaptop01",
-    "name": "Macbook Pro M4 16 Inch 2024",
+    "name": "Apple Macbook Pro M4 16 Inch 2024",
     "price": 30000000,
     "brand": "Apple",
-    "os": "macOS",
+    "os": "MacOS",
     "battery": "100Wh",
     "shortdescription": "The latest Macbook Pro with the powerful M4 chip, delivering incredible performance for professionals.",
-    "image": "../assets/images/MacbookProM4 16 Inch 2024.jpg",
-    "stock": "new",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_9__4.png",
+    "stock": "out of stock",
     "specifications": "CPU: Apple M4 Pro, RAM: 16GB unified memory, Storage: 512GB SSD, VGA: Integrated 16-core, Display: 16.2 inch Liquid Retina XDR (3456x2234), mini-LED panel"
   },
   {
@@ -16,7 +16,7 @@
     "name": "Asus ROG Strix G16",
     "price": 22000000,
     "brand": "Asus",
-    "image": "../assets/images/Asus/Laptop Asus ROG Strix G16 G615LR-S5289W.png",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:58:58/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asusus_2.png",
     "os": "Windows 11 Home",
     "battery": "90Wh",
     "shortdescription": "A powerful gaming laptop from Asus ROG series, designed for competitive gaming.",
@@ -28,7 +28,7 @@
     "name": "Dell Gaming G15 5515",
     "price": 25000000,
     "brand": "Dell",
-    "image": "../assets/images/Dell/Dell Gaming G15 5515 R75800H.png",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:58:58/q:90/plain/https://cellphones.com.vn/media/catalog/product/_/0/_0003_dell-gaming-g15-5515-70266675_09_2.jpg",
     "os": "Windows 11 Home",
     "battery": "56Wh",
     "shortdescription": "Dell G15 gaming laptop with AMD Ryzen processor for a smooth gaming experience.",
@@ -38,9 +38,9 @@
   {
     "id": "KLLaptop04",
     "name": "MSI Katana 15 B13UDXK",
-    "price": 15000000,
+    "price": 19590000,
     "brand": "MSI",
-    "image": "../assets/images/MSI Gamming/LaptopMSI Katana 15 B13UDXK.png",
+    "image": "https://product.hstatic.net/200000420363/product/_new_-anh-sp-web_4fd18e7a2e024d2da5053f5a13f18d41_compact.png",
     "os": "Windows 11 Home",
     "battery": "53.5Wh",
     "shortdescription": "Sharpen your game with the MSI Katana 15, a perfect blend of performance and design for gamers.",
@@ -52,11 +52,11 @@
     "name": "Dell 14 Pro 14250",
     "price": 16990000,
     "brand": "Dell",
-    "image": "../assets/images/Dell/dell-pro-14-pc14250.png",
+    "image": "https://laptops.vn/wp-content/uploads/2025/06/mat-trai-dell-pro-14-pc14250-magnetite.jpg",
     "os": "Windows 11 Home",
     "battery": "3-cell, 45Wh",
     "shortdescription": "Dell 14 Pro 14250 is a powerful laptop for Work Office experience.",
-    "stock": "stock",
+    "stock": "out of stock",
     "specifications": "CPU: Intel® Core™ 5 120U,RAM: 8GB DDR5 5600MHz(1x8GB,2 khe,nâng cấp tối đa 64GB), Storage 512GB M.2 PCIe NVMe SSD, VGA: Onboard Integrated Intel® Graphics,Display : 14 inch FHD, (1920 x 1200),16:10,Anti-Glare, 300 nits,IPS, 600Hz"
   },
   {
@@ -64,7 +64,7 @@
     "name": "GIGABYTE G5 KF5",
     "price": 22990000,
     "brand": "GIGABYTE",
-    "image": "../assets/images/Dell Gigabite Lenovo/laptop-gaming-gigabyte-g5-kf5.png",
+    "image": "https://anphat.com.vn/media/product/45085_laptop_gigabyte_g5_kf_e3vn333sh_anphatpc6.jpg",
     "os": "Windows 11 Home",
     "battery": "Lithium-Ion 54Wh",
     "shortdescription": "GIGABYTE G5 KF5 is a powerful laptop for Game And Study experience.",
@@ -74,13 +74,13 @@
   {
     "id": "KLLaptop07",
     "name": "Lenovo Legion Y7000 2025",
-    "price": 32990000,
+    "price": 33990000,
     "brand": "Lenovo",
-    "image": "../assets/images/Dell Gigabite Lenovo/lenovo-legion-y7000-2025.png",
+    "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_3__9_37.png",
     "os": "Windows 11 Home",
     "battery": "4cell, 60wh",
     "shortdescription": "GIGABYTE G5 KF5 is a powerful laptop for Game And Study MaxSetting experience.",
-    "stock": "In-stock",
+    "stock": "new",
     "specifications": "CPU: Intel Core i7 14650HX, RAM: 16GB DDR5-5600MHz (hỗ trợ nâng cấp), Storage: 512GB PCIe® 4.0 x4 NVME SSD, VGA: Intel® Graphics + NVIDIA® GeForce RTX 5060 8GB GDDR7 115W, Display: 15.3 inch 2.5K (2560x1600) độ sáng 400nits, IPS, 180Hz"
   }
 ]

@@ -235,7 +235,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <span class="close-btn" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></span>
-                        <h2 id="modal-title">Thêm Sản Phẩm</h2>
+                        <h2 id="modal-title">Add Product</h2>
 
                         <form id="addProductForm">
                             <div class="form-group">
@@ -245,21 +245,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="productName">Tên sản phẩm:</label>
+                                <label for="productName">Product Name:</label>
                                 <input type="text" id="productName">
                                 <p id="invalid-name"></p>
                             </div>
 
                             <div class="form-group">
-                                <label for="productPrice">Giá:</label>
+                                <label for="productPrice">Price:</label>
                                 <input type="number" id="productPrice">
                                 <p id="invalid-price"></p>
                             </div>
 
                             <div class="form-group">
-                                <label for="productBrand">Thương Hiệu</label>
+                                <label for="productBrand">Brand</label>
                                 <select id="productBrand">
-                                    <option selected>Vui lòng chọn Brand</option>
+                                    <option selected>Please choose a Brand</option>
                                     <option value="Apple">Apple</option>
                                     <option value="Asus">Asus</option>
                                     <option value="Dell">Dell</option>
@@ -271,7 +271,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="productImage" class="form-label">Hình Ảnh Sản Phẩm</label>
+                                <label for="productImage" class="form-label">Images</label>
                                 <input type="url" id="productImg">
                                 <p id="invalid-img"></p>
                             </div>
@@ -279,13 +279,15 @@
                             <div class="form-group">
                                 <label for="Os" class="form-label">Operating System</label>
                                 <select class="form-select" id="OS">
+                                      <option selected>Please choos OS</option>
                                     <option value="MacOS">MacOS</option>
-                                    <option value="Windows">Windows</option>
+                                    <option value="Windows 11 Home">Windows 11 Home</option>
                                 </select>
+                                <p id="invalid-OS"></p>
                             </div>
 
                             <div class="form-group">
-                                <label for="battery" class="form-label">Pin</label>
+                                <label for="battery" class="form-label">Battery</label>
                                 <input type="text" class="form-control" id="battery" name="battery" required>
                                 <p id="invalid-battery"></p>
                             </div>
@@ -299,9 +301,10 @@
                             <div class="form-group">
                                 <label for="productStock">Tình Trạng Hàng</label>
                                 <select class="stock-select" id="productStock">
-                                    <option selected>Còn Hàng Hay Hết Hàng</option>
-                                    <option value="0">Hết Hàng</option>
-                                    <option value="1">Còn Hàng</option>
+                                    <option selected>Còn Hàng or Hết Hàng or New Box</option>
+                                    <option value="out of stock">Hết Hàng</option>
+                                    <option value="in-stock">Còn Hàng</option>
+                                    <option value="new">New Box</option>
                                 </select>
                                 <p id="invalid-stock"></p>
                             </div>
@@ -330,15 +333,18 @@
                         <div class="select filter-brand">
                             <select id="brandFilter" onchange="filterByBrand()">
                                 <option value="all">All Brands</option>
-                                <option value="MacbookPro">Apple</option>
+                                <option value="Apple">Apple</option>
                                 <option value="Asus">Asus</option>
                                 <option value="Dell">Dell</option>
                                 <option value="MSI">MSI</option>
+                                <option value="Lenovo">Lenovo</option>
+                                <option value="Gigabyte">Gigabyte</option>
                             </select>
                         </div>
 
                         <i class='bx bx-search'></i>
                     </div>
+
                     <table>
                         <thead>
                             <tr>
@@ -352,6 +358,7 @@
                         </thead>
                         <tbody id="productTableBody"></tbody>
                     </table>
+
                 </div>
             </div>
 
@@ -377,6 +384,8 @@
         </script>
     <!-- Admin JS -->
     <script src="../../assets/js/Admin/main.js"></script>
+    <!-- Admin CRUD UI from AXIOS -->
+    <script type="module" src="../controllers/index.js"></script>
 </body>
 
 </html>
