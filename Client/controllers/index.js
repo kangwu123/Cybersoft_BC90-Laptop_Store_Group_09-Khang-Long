@@ -70,7 +70,7 @@ const Render_UI = (arr_product) => {
              
                     <p class="description">Cấu Hình:
                       ${obj_Product.specifications} & 
-                      <p>Pin:${obj_Product.battery}</p>
+                      <p>Pin: ${obj_Product.battery}</p>
                     </p>
 
                     <div class="product-rating">
@@ -78,6 +78,7 @@ const Render_UI = (arr_product) => {
                         <span class="reviews">(21)</span>
                     </div>
                     <button class="add-to-cart-btn" onclick="btn_Add_Cart('${obj_Product.id}')">
+                        <i class="fa-solid fa-cart-shopping"></i>
                         Add To Cart
                     </button>
                 </div>
