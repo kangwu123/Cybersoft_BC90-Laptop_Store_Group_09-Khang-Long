@@ -1072,6 +1072,30 @@ header .hamburger.active span:nth-child(3) {
 .laptop-products .product-item:hover .product-actions {
   opacity: 1;
 }
+.laptop-products .product-item .badge-left {
+  position: relative;
+  top: 4px;
+  left: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: white;
+  background-color: #ff4d4f;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.laptop-products .product-item .badge-right {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: darkblue;
+  background-color: #dde6ff;
+  border-radius: 4px;
+  white-space: nowrap;
+}
 .laptop-products .product-image {
   position: relative;
   overflow: hidden;
@@ -1119,39 +1143,63 @@ header .hamburger.active span:nth-child(3) {
 .laptop-products .product-info {
   padding: 20px;
 }
-.laptop-products .product-title {
+.laptop-products .product-info .status {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  display: inline-block;
+}
+.laptop-products .product-info .status.completed {
+  background-color: #22c55e;
+  color: #fff;
+}
+.laptop-products .product-info .status.pending {
+  background-color: #f59e0b;
+  color: #fff;
+}
+.laptop-products .product-info .status.process {
+  background-color: #dbf9eb;
+  color: #333;
+}
+
+.product-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: #333;
 }
-.laptop-products .product-price {
+
+.product-price {
   margin-bottom: 10px;
 }
-.laptop-products .product-price .price {
+.product-price .price {
   font-size: 1.3rem;
   color: #ff324d;
   font-weight: bold;
   margin-right: 10px;
 }
-.laptop-products .product-price .original-price {
+.product-price .original-price {
   color: #999;
   text-decoration: line-through;
   font-size: 1rem;
 }
-.laptop-products .product-rating {
+
+.product-rating {
   display: flex;
   align-items: center;
   gap: 5px;
   margin-bottom: 15px;
 }
-.laptop-products .product-rating .stars {
+.product-rating .stars {
   color: #ffd700;
 }
-.laptop-products .product-rating .reviews {
+.product-rating .reviews {
   color: #666;
   font-size: 0.9rem;
 }
-.laptop-products .add-to-cart-btn {
+
+.add-to-cart-btn {
   width: 100%;
   padding: 12px;
   background: #ff324d;
@@ -1162,7 +1210,7 @@ header .hamburger.active span:nth-child(3) {
   font-weight: 600;
   transition: background 0.3s ease;
 }
-.laptop-products .add-to-cart-btn:hover {
+.add-to-cart-btn:hover {
   background: rgb(254, 0, 33.4536585366);
 }
 
@@ -1215,6 +1263,37 @@ header .hamburger.active span:nth-child(3) {
 }
 .filter-section .filter-group .filter-dropdown option {
   padding: 8px;
+}
+.filter-section .search-form {
+  position: relative;
+}
+@media (max-width: 991px) {
+  .filter-section .search-form {
+    display: none;
+  }
+}
+.filter-section .search-form input {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  width: 250px;
+}
+.filter-section .search-form input:focus {
+  border-color: #ff4747;
+}
+.filter-section .search-form button {
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+.filter-section .search-form button:hover {
+  color: #ff4747;
 }
 
 .pagination-section {
