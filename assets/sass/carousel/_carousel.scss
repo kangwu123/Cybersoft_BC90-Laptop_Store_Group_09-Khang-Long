@@ -1,119 +1,174 @@
-// Carousel styles for the Owl Carousel
 .carousel-section {
-    // push the carousel below the fixed header
-    margin-top: 0 !important;
+  position: relative;
+  padding-top: 0.5rem;
+  background-image: linear-gradient(to right, rgba(34, 170, 221, 0.9333333333), #04fa41);
+
+  h1 {
+    color: $primary-crimson;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+
+    // Responsive
+    @media (max-width: 1024px) {
+      font-size: 45px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 640px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 26px;
+    }
+  }
+
+  .owl-carousel {
     position: relative;
 
-    .owl-carousel {
-        position: relative;
+    .item {
+      overflow: hidden;
+      box-shadow: $box-shadow-soft;
+      transition: transform 0.5s, box-shadow 0.5s;
+      cursor: pointer;
+      background-color: $secondary;
 
-        .item {
-            position: relative;
+      img {
+        width: 100%;
+        height: 510px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s, filter 0.5s;
+      }
+    }
+  }
 
-            img {
-                width: 100%;
-                display: block;
-                object-fit: cover; // ensure the image covers the slide area
-                height: 420px; // default height for desktop
-            }
-        }
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
 
-        // Navigation arrows
-        .owl-nav {
-            button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(0, 0, 0, 0.45);
-                color: #fff;
-                border: none;
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                transition: background 0.18s ease, transform 0.12s ease;
+    button {
+      pointer-events: auto;
+      background-color: $light !important;
+      opacity: 0.4;
+      color: $dark;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      border: none;
+      font-size: $text-3xl !important;
+      box-shadow: 0 6px 15px rgba($dark, 0.15);
+      cursor: pointer;
+      transition: all 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-                &:hover {
-                    background: rgba(0, 0, 0, 0.65);
-                    transform: translateY(-50%) scale(1.03);
-                }
+      &:hover {
+        background: $gray-600 !important;
+        color: $light;
+        opacity: 0.8;
+        transform: scale(1.1);
+        box-shadow: 0 8px 18px rgba($dark, 0.25);
+      }
 
-                &.owl-prev {
-                    left: 12px;
-                }
-
-                &.owl-next {
-                    right: 12px;
-                }
-
-                i {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        // Dots
-        .owl-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-
-            .owl-dot {
-                display: inline-block;
-                margin: 0 8px;
-                outline: none;
-
-                span {
-                    display: block;
-                    width: 12px;
-                    height: 12px;
-                    padding: 0;
-                    border-radius: 50%;
-                    border: 2px solid #fff;
-                    background: transparent;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-                }
-
-                &:hover span {
-                    background: rgba(255, 255, 255, 0.8);
-                }
-
-                &.active {
-                    span {
-                        background: #ff4747;
-                        border-color: #ff4747;
-                        width: 14px;
-                        height: 14px;
-                    }
-                }
-            }
-        }
+      &:active {
+        transform: scale(0.95);
+        background: darken($secondary, 8%);
+        box-shadow: inset 0 2px 6px rgba($dark, 0.3);
+      }
     }
 
-    // responsive heights for better visual balance
-    @media (max-width: 599px) {
-        .owl-carousel .item img {
-            height: 220px;
-        }
+    .owl-prev {
+      margin-left: 4rem;
     }
 
-    @media (min-width: 600px) and (max-width: 991px) {
-        .owl-carousel .item img {
-            height: 320px;
-        }
+    .owl-next {
+      margin-right: 4rem;
+    }
+  }
+
+  .owl-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    .owl-dot {
+      width: 10px;
+      height: 10px;
+      background-color: $gray-600;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: all 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-RosePink;
+        transform: scale(1.2);
+      }
+
+      &.active {
+        width: 16px;
+        border-radius: 10px;
+        background-color: $primary-RosePink;
+        border-color: lighten($primary, 30%);
+        transform: scale(1.35);
+        box-shadow: 0 0 10px rgba($primary, 0.6);
+      }
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .owl-carousel .item img {
+      height: 450px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .owl-carousel .item img {
+      height: 400px;
     }
 
-    @media (min-width: 992px) {
-        .owl-carousel .item img {
-            height: 520px;
-        }
+    .owl-dots {
+      .owl-dot {
+        width: 8px;
+        height: 8px;
+        border: 1px solid transparent;
+      }
     }
+  }
+
+  @media (max-width: 768px) {
+    .owl-carousel .item img {
+      height: 400px;
+    }
+
+    .owl-nav {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .owl-carousel .item img {
+      height: 350px;
+    }
+  }
 }
