@@ -40,6 +40,40 @@
             }
         }
     }
+    .search-form {
+            position: relative;
+
+            @media (max-width: 991px) {
+                display: none;
+            }
+
+            input {
+                padding: 8px 15px;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                outline: none;
+                width: 250px;
+
+                &:focus {
+                    border-color: #ff4747;
+                }
+            }
+
+            button {
+                position: absolute;
+                right: 10px;
+                top: 55%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #666;
+
+                &:hover {
+                    color: #ff4747;
+                }
+            }
+        }
 }
 
 // Pagination Section Styles
