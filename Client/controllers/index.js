@@ -37,6 +37,21 @@ window.btn_Add_Cart = (id) => {
   manager.btn_Add_Cart(product);
   saveCart();
   renderCartCount();
+
+  // 🌟 [FIX 1] Refresh the modal body if it's currently open
+  if (document.getElementById("cart-modal")) {
+    renderCartModalBody();
+  }
+
+  // Add animation to cart icon
+  const cartIcon = document.querySelector(".cart-icon");
+  if (cartIcon) {
+    cartIcon.classList.add("animate__animated", "animate__rocket");
+    cartIcon.addEventListener('animationend', () => {
+      cartIcon.classList.remove("animate__animated", "animate__rocket");
+    }, { once: true });
+  }
+
   console.log("🛒 Giỏ hàng hiện tại:", manager.arr_Cart);
 };
 
@@ -129,7 +144,14 @@ const Filter_Products = () => {
     const [min, max] = price.split("-");
     filtered = filtered.filter(p => {
       const priceNum = Number(p.price);
-      return max ? (priceNum >= min && priceNum <= max) : (priceNum >= 2000);
+      if (max) {
+        return priceNum >= Number(min) && priceNum <= Number(max);
+      } else if (min === "2000+") {
+        return priceNum >= 2000;
+      } else if (min === "0") {
+         return priceNum <= 1000;
+      }
+      return true;
     });
   }
 
@@ -155,7 +177,7 @@ window.showProductDetail = (id) => {
   api.get_LaptopInfo_By_ID(id).then(res => {
     const p = res.data;
     const modalHTML = `
-      <div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+      <div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" onclick="if(event.target.id === 'productModal') closeProductModal()">
         <div class="bg-white rounded-2xl p-6 w-[500px] relative">
           <button class="absolute top-3 right-4 text-gray-600 text-2xl" onclick="closeProductModal()">&times;</button>
           <img src="${p.img}" alt="${p.name}" class="w-full rounded-lg mb-4" />
@@ -175,5 +197,165 @@ window.showProductDetail = (id) => {
 // ❌ Đóng modal chi tiết
 window.closeProductModal = () => {
   const modal = document.getElementById("productModal");
+  if (modal) modal.remove();
+};
+
+
+// 🌟 --- CART MODAL --- 🌟
+
+/**
+ * 🎨 (Helper) Render lại nội dung bên trong modal (list item & totals)
+ */
+const renderCartModalBody = () => {
+  const itemListEl = document.getElementById("cart-item-list");
+  const totalEl = document.getElementById("cart-total-price");
+
+
+  if (!itemListEl || !totalEl) return;
+
+  let contentHTML = "";
+  let subtotal = 0;
+
+  if (manager.arr_Cart.length === 0) {
+    contentHTML = `<p class="empty-cart">Chưa có sản phẩm nào</p>`;
+    totalEl.innerText = "0đ";
+  } else {
+    manager.arr_Cart.forEach((p, index) => {
+      const itemTotal = p.price * p.quantity;
+      subtotal += itemTotal;
+      contentHTML += `
+        <div class="cart-item">
+          <h3 class="stt">${index + 1}</h3>
+          <img src="${p.img}" alt="${p.name}" />
+          <div class="cart-item-main">
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h4 class="item-name">${p.name}</h4>
+                <div class="item-right">
+                <div class="quantity-control">
+                <button class="qty-btn" onclick="cart_DecreaseQty('${p.id}')">-</button>
+                <span class="qty-number">${p.quantity}</span>
+                <button class="qty-btn" onclick="cart_IncreaseQty('${p.id}')">+</button>
+                </div>
+                <span class="item-price">${itemTotal.toLocaleString("vi-VN")}đ</span>
+                </div>
+              </div>
+              <button class="remove-btn" onclick="cart_RemoveItem('${p.id}')">Xóa</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    
+    // Update totals
+    const total = subtotal;
+    totalEl.innerText = `${total.toLocaleString("vi-VN")}đ`;
+  }
+
+  itemListEl.innerHTML = contentHTML;
+};
+
+/**
+ * 🛒 (Action) Tăng số lượng
+ */
+window.cart_IncreaseQty = (id) => {
+  const product = productsBackup.find(p => p.id == id);
+  const itemInCart = manager.arr_Cart.find(p => p.id == id);
+
+  manager.btn_Add_Cart(product || itemInCart); 
+  saveCart();
+  renderCartCount();
+  renderCartModalBody(); 
+};
+
+/**
+ * 🛒 (Action) Giảm số lượng
+ */
+window.cart_DecreaseQty = (id) => {
+  const item = manager.arr_Cart.find(p => p.id == id);
+  if (item) {
+    if (item.quantity > 1) {
+      item.quantity--;
+    } else {
+      manager.arr_Cart = manager.arr_Cart.filter(p => p.id != id);
+    }
+    saveCart();
+    renderCartCount();
+    renderCartModalBody(); 
+  }
+};
+
+/**
+ * 🛒 (Action) Xóa sản phẩm
+ */
+window.cart_RemoveItem = (id) => {
+  manager.arr_Cart = manager.arr_Cart.filter(p => p.id != id);
+  saveCart();
+  renderCartCount();
+  renderCartModalBody(); 
+};
+            
+/**
+ * 🛒 (Action) Xóa tất cả
+ */
+window.btnClearCart = () => {
+  manager.arr_Cart = [];
+  saveCart();
+  renderCartCount();
+  renderCartModalBody(); 
+};
+
+/**
+ * 🪟 (Action) Mở Modal
+ */
+window.openCartModal = () => {
+  if (document.getElementById("cart-modal")) return;
+
+  const modalHTML = `
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" onclick="if(event.target.id === 'cart-modal') closeCartModal()">
+      <div class="cart-modal"> 
+        <button class="close-btn" onclick="closeCartModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2 class="cart-modal-title">
+          <i class="fi fi-rr-shopping-cart"></i>
+          GIỎ HÀNG CỦA TÔI
+        </h2>
+        <div class="cart-modal-body">
+          <div class="list-cart-item" id="cart-item-list">
+            </div>
+          <div class="modal-right">
+            <h3 class="discount-label">Mã giảm giá</h3>
+            <div class="discount-group">
+              <input type="text" placeholder="Nhập mã giảm giá" />
+              <button class="apply-btn">Áp dụng</button>
+            </div>
+            <hr> 
+            <div class="total">
+              <span>Tổng tiền:</span>
+              <strong id="cart-total-price">0đ</strong>
+            </div>
+            <div class="agreement">
+              <input type="checkbox" id="terms-agree">
+              <label for="terms-agree">Tôi đã đọc và đồng ý với <span>điều khoản và điều kiện</span> của website</label>
+            </div>
+            <div class="modal-actions">
+              <button class="btn-clear" onclick="btnClearCart()">Xóa Tất Cả</button>
+              <button class="btn-checkout">Thanh Toán</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML("beforeend", modalHTML);
+  renderCartModalBody(); 
+};
+
+/**
+ * ❌ (Action) Đóng Modal
+ */
+window.closeCartModal = () => {
+  const modal = document.getElementById("cart-modal");
   if (modal) modal.remove();
 };
