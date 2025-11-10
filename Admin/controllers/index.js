@@ -432,3 +432,20 @@ Get_Element_ID("btnUpdate").onclick = function (e) {
       console.log(error.data);
     });
 };
+
+// ✅ SEARCH FUNCTION
+window.searchProduct = function () {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  
+  // Lấy toàn bộ danh sách sản phẩm hiện tại
+  api.get_Api_Promise()
+    .then((result) => {
+      const filtered = result.data.filter((item) => {
+        const name = item.name ? item.name.toLowerCase() : "";
+        const desc = item.shortdescription ? item.shortdescription.toLowerCase() : "";
+        return name.includes(searchInput) || desc.includes(searchInput);
+      });
+      render_UI(filtered);
+    })
+    .catch((error) => console.log(error));
+};
