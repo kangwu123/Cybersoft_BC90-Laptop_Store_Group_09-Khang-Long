@@ -56,11 +56,11 @@ const render_UI = (arr_Product) => {
               </td>
               <td>
                  <button class="btn edit" onclick="btn_Edit('${obj_Product.id}')
-                       "data-toggle="modal" data-target="#product-modal"> Sửa
+                       "data-toggle="modal" data-target="#product-modal"> Edit
                 </button>
                 <button class="btn delete" onclick="btn_Delete('${
                   obj_Product.id
-                }')"> Xóa </button>
+                }')"> Delete </button>
              </td>
           </tr>
         `;
@@ -86,7 +86,7 @@ const btn_Delete = (id) => {
 window.btn_Delete = btn_Delete;
 //  Edit Action
 const btn_Edit = (id) => {
-  Get_Element_ID("modal-title").innerHTML = "Sửa sản phẩm";
+  Get_Element_ID("modal-title").innerHTML = "Edit Product";
   //Xóa các thông báo lỗi cũ (nếu có)
   const invalids = document.querySelectorAll("[id^='invalid-']");
   invalids.forEach((el) => (el.innerHTML = ""));
@@ -131,7 +131,7 @@ const btn_Edit = (id) => {
 window.btn_Edit = btn_Edit;
 // Dom tới nút thêm sản phẩm mới
 Get_Element_ID("btn-Add").onclick = function () {
-  Get_Element_ID("modal-title").innerHTML = "Thêm sản phẩm mới";
+  Get_Element_ID("modal-title").innerHTML = "Add New Product";
   Get_Element_ID("addProductForm").reset();
 
   // FIX 2: Use correct button IDs "btnSubmit" and "btnUpdate"
