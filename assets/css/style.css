@@ -1698,7 +1698,7 @@ header .hamburger.active span:nth-child(3) {
 }
 #cart-modal .cart-modal {
   width: 70% !important;
-  height: 60% !important;
+  height: 70% !important;
   padding: 2rem !important;
   display: flex;
   flex-direction: column;
@@ -1813,7 +1813,7 @@ header .hamburger.active span:nth-child(3) {
 #cart-modal .cart-modal .cart-modal-body .list-cart-item .cart-item .cart-item-content .cart-item-info .item-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;@
+  gap: 1.5rem;
   flex: 0 0 auto;
 }
 #cart-modal .cart-modal .cart-modal-body .list-cart-item .cart-item .cart-item-content .cart-item-info .item-right .item-price {
@@ -2065,7 +2065,7 @@ header .hamburger.active span:nth-child(3) {
 @media (min-width: 1280px) {
   #cart-modal .cart-modal {
     width: 70%;
-    height: 60%;
+    height: 70%;
     padding: 2.4rem;
   }
   #cart-modal .cart-modal .cart-modal-body {
@@ -2075,7 +2075,7 @@ header .hamburger.active span:nth-child(3) {
 @media (min-width: 1024px) and (max-width: 1279px) {
   #cart-modal .cart-modal {
     width: 70%;
-    height: 60%;
+    height: 70%;
     padding: 2rem;
   }
   #cart-modal .cart-modal .cart-modal-title {

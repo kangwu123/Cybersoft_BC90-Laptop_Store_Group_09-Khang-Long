@@ -1,7 +1,7 @@
 #cart-modal {
   .cart-modal {
     width: 70% !important;
-    height: 60% !important;
+    height: 70% !important;
     padding: 2rem !important;
     display: flex;
     flex-direction: column;
@@ -426,7 +426,7 @@
 @media (min-width: 1280px) {
   #cart-modal .cart-modal {
     width: 70%;
-    height: 60%;
+    height: 70%;
     padding: 2.4rem;
 
     .cart-modal-body {
@@ -438,7 +438,7 @@
 @media (min-width: 1024px) and (max-width: 1279px) {
   #cart-modal .cart-modal {
     width: 70%;
-    height: 60%;
+    height: 70%;
     padding: 2rem;
 
     .cart-modal-title {
